@@ -7,7 +7,7 @@
 
 ### Before you begin
 
-**There is no public installer at this publication date.** These instructions explain the recorded installer workflow and deployment requirements; they are not a claim that a new user can complete installation from this repository today. It contains documentation only, with no source bootstrap, server image or build recipe.
+**RC14 V8 is owner-authorized as the first proprietary non-commercial macOS prerelease candidate.** Check [GitHub Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases) for the actual binary asset; a release note or checksum record alone is not a download. This repository does not contain a public Reader implementation or a general NAS setup wizard.
 
 The exact RC14 V8 candidate is Intel x86_64. Intel native build evidence exists; Apple Silicon native/universal compatibility and a general minimum macOS support matrix are not established. macOS 15.7.9 appears in earlier Intel installer tests; this is historical evidence, not a guaranteed RC14 minimum or full support matrix. No notarization acceptance result is established by the signing PASS markers alone.
 
@@ -85,7 +85,7 @@ Pe TrueNAS pregătești un dataset și un share dedicate, capacitate și backup,
 
 Citirea prin ChatGPT se configurează separat: Reader/MCP central sau oglindă Drive care păstrează categoriile. Reader necesită un pachet autorizat separat, acces exclusiv de citire la arborele administrat, identitate de serviciu compatibilă cu ACL-urile și un singur tunel MCP central. Variabila istorică `CHATGPT_INBOX_ROOT` indică rădăcina montată în serviciu, fără a impune structura veche. Endpoint-ul înregistrat este `/mcp`, streamable HTTP, pe portul intern 8000. Aici nu este distribuită o implementare instalabilă a serverului.
 
-### Instalare și utilizare când DMG-ul exact devine disponibil
+### Instalare și utilizare după ce DMG-ul apare efectiv în GitHub Releases
 
 1. Verifici octeții și SHA-256 conform [RELEASE.md](RELEASE.md), apoi deschizi **ChatGPT Drop Installer.app** din DMG.
 2. Alegi **Install** sau **Update** și autorizezi macOS. Aplicația trebuie să ajungă în `/Applications/ChatGPT Drop.app`. Instrucțiunile vechi cu `.command` nu reprezintă interfața RC14.
