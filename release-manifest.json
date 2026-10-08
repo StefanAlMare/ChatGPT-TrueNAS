@@ -14,7 +14,8 @@
     "local_sha256_verified": true,
     "disk_image_integrity_verified": true,
     "dmg_installer_app_helper_signatures_verified": true,
-    "proprietary_python_source_present": true
+    "proprietary_python_source_present": true,
+    "scope": "PRIVATE_ORIGINAL_RC14_V8_DO_NOT_PUBLISH"
   },
   "validation": {
     "native_build_and_outer_audit_recorded": "PASS",
@@ -26,13 +27,23 @@
   "publication": {
     "release_published": false,
     "public_asset_available": false,
-    "status": "BLOCKED_PENDING_SANITIZED_REBUILT_RESIGNED_RC14",
-    "release_target": "v0.9.0-rc14",
-    "authorized_public_artifact": "privacy-sanitized RC14 V8 derivative only, distinct SHA/signature from private original",
-    "original_reference_dmg_must_never_be_uploaded": true,
-    "reason": "Original RC14 V8 DMG embeds private NAS, SMB username and Tailscale connection defaults. Sanitization, fail-closed defaults, code signature regeneration and output security audit required before public prerelease.",
-    "noncommercial_proprietary_license": true,
+    "status": "DRAFT_PREPARED_NEEDS_PUBLICATION_BY_RELEASE_ID",
+    "draft_release_id": 407214571,
+    "draft_asset_id": 622859835,
+    "proposed_tag": "v0.9.0-rc14",
+    "license": "Proprietary Non-Commercial Preview License",
     "commercial_and_source_reuse_require_owner_permission": true,
-    "artifact_identity_to_be_filled_after_remote_download_verification": true
+    "server_asset_size_and_digest_verified": true,
+    "reason": "Draft exists with complete sanitized DMG, exact server-reported size and SHA. The script incorrectly looked up a draft by tag and received HTTP 404. Publish existing release ID, not a duplicate, then independently redownload the public DMG."
+  },
+  "public_sanitized_artifact": {
+    "filename": "ChatGPT-Drop-Installer-macOS-x86_64-0.9.0-rc14-SANITIZED.dmg",
+    "bytes": 23093113,
+    "sha256": "acfa658ee6e9408d18ceb20e6f2ef51a5e807660d5b9ec977b9623a3db39a8c6",
+    "derived_from": "RC14 V8, cleaned and re-signed locally on macOS",
+    "local_sanitization_audit": "PASS_REPORTED",
+    "notarization": "NOT_CONFIRMED",
+    "graphical_install_update_e2e": "NOT_CONFIRMED",
+    "status": "GITHUB_DRAFT_ASSET_UPLOADED_SERVER_SHA256_MATCH"
   }
 }
