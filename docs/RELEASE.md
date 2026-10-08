@@ -1,42 +1,49 @@
-# RC14 V8 artifact and publication record / Artifact și publicare
+# RC14 V8 — first public non-commercial preview / Prima versiune publică
 
-**Distribution rights and acceptance:** [LICENSE](../LICENSE.md) · [Rights, security levels and GitHub admission gates](RIGHTS.md) · [Naming/marks review](RIGHTS.md#6-names-marks-and-third-party-rights--mărci-și-dependențe). This candidate is **not an approved public source-free installer**.
+[README](../README.md) · [Română](../README.ro.md) · [License](../LICENSE.md) · [GitHub Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases)
 
-Reviewed / Revizuit: **8 October 2026 / 8 octombrie 2026**.
+**Owner decision on 8 October 2026:** publish the exact latest macOS **RC14 V8** as a **proprietary, non-commercial prerelease**. The previously stated blanket ban on distributing an installer containing readable proprietary Python is **superseded for this specifically authorized DMG**, not for other private source, secrets or user data. Being able to read runtime source within the DMG does **not** license its redistribution, alteration, resale or incorporation into other products.
 
-## Exact candidate / Candidatul exact
+## Exact artifact / Identitatea artifactului
 
-| Field | Value |
+| Field | Recorded value |
 | --- | --- |
-| Product | ChatGPT Drop |
-| Release label | ChatGPT Drop 0.9.0-rc14 V8 |
-| App build | 14 |
-| Platform | macOS Intel x86_64 |
-| Installer filename | `ChatGPT-Drop-Installer-macOS-x86_64-0.9.0-rc14.dmg` |
-| Bytes | `23092580` |
+| Product | ChatGPT Drop (macOS app), ChatGPT-TrueNAS (public repository) |
+| Tag for initial public prerelease | `v0.9.0-rc14` |
+| Candidate / build recipe | `0.9.0-rc14` / V8; app build 14 |
+| Platform | macOS Intel `x86_64` |
+| Filename | `ChatGPT-Drop-Installer-macOS-x86_64-0.9.0-rc14.dmg` |
+| File size | `23092580` bytes |
 | SHA-256 | `125802a96df9b169960ed09f65cdb893b22f85f1875d285ea67b942a9b3c6f34` |
-| Native build and outer audit recorded | 12 September 2026 |
-| Artifact recovered and independently checked | 8 October 2026 |
-| Graphical Update and runtime E2E | Not yet validated / Încă nevalidate |
-| Accepted baseline | RC13; RC14 not promoted / RC14 nepromovat |
-| Public release | **Not published: source-disclosure constraint** / **Nepublicat: restricția divulgării surselor** |
+| Native build and outer-DMG audit | PASS, recorded 12 September 2026 |
+| Recovered binary, size/SHA and read-only DMG/signature audit | PASS, recorded 8 October 2026 |
+| Full graphical Update and runtime E2E on **this exact RC14 V8** | **NOT CONFIRMED** |
+| Apple notarization and stapling | **NOT CONFIRMED** |
+| Generic NAS/end-user onboarding | **NOT VERIFIED; reference-specific assumptions remain** |
+| Prior accepted internal macOS baseline | RC13 (history/rollback reference, **not another public release**) |
 
-## Fresh verification / Reverificare
+**Distribution check:** this document records what is *authorized* and verified. An actual download exists **only when [GitHub Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases) lists a real asset with the exact filename and matching checksum**. Documentation or a tag alone must never be called a completed software release.
 
-The artifact was located through Reader/MCP in the owner-supplied batch. The Reader reported matching bytes/SHA. Because DMG inspection is not supported server-side, the original file was recovered in bounded binary ranges for local inspection and prospective release upload. Local byte count and SHA-256 independently matched. Disk-image integrity verification and signature checks for the DMG, graphical installer, embedded application and tsnet helper passed. The image was mounted read-only; no installer or app was executed. The runtime contains the 30-second/900-second protocol controls.
+## Why this is proprietary despite source being readable / De ce rămâne proprietar
 
-Artifactul a fost localizat prin Reader/MCP în lotul furnizat de autor. Identitatea raportată a coincis. Deoarece Reader nu inspectează DMG-uri pe server, fișierul a fost recuperat pe fragmente pentru audit local și eventuala publicare. Octeții/SHA au coincis independent. Integritatea imaginii și semnăturile DMG/installer/aplicație/helper au trecut verificarea. Montarea a fost exclusiv pentru citire, fără executarea aplicației sau installerului. Markerii 30/900 sunt prezenți.
+The DMG includes a readable owner-authored Python runtime file, such as `ChatGPT Drop Installer.app/Contents/Resources/runtime/chatgpt_drop.py`. The owner knowingly authorizes disclosure **inside this specific installer**. It remains subject to the [non-commercial proprietary license](../LICENSE.md): non-commercial personal/educational/research use may be free; **commercial use, repackaging, redistribution, derivative works, OEM, paid hosting and code integration require prior written permission**. Independent third-party open-source permissions are preserved.
 
-## Why no public asset / De ce nu există asset public
+**Română:** DMG-ul original include Python proprietar lizibil. Titularul autorizează distribuirea **acestui fișier exact**, nu reutilizarea codului în alte produse. Utilizarea comercială cere acord scris; licențele terțe se respectă.
 
-The exact DMG contains **`ChatGPT Drop Installer.app/Contents/Resources/runtime/chatgpt_drop.py`**, a 41,294-byte proprietary Python source file, alongside runtime/support material. Publishing that unchanged DMG would expose this source. The owner's publication requirement keeps proprietary source private. Removing or repackaging the source would change the required SHA-256 and signatures, so a modified installer cannot be presented as this exact candidate.
+## How to test / Cum se testează
 
-DMG-ul exact conține fișierul Python proprietar de **41.294 de octeți** indicat mai sus. Publicarea DMG-ului neschimbat ar expune sursa. Cerința autorului păstrează sursele private. Eliminarea sau reîmpachetarea ar schimba SHA-256 și semnăturile; un installer modificat nu poate fi prezentat drept candidatul exact cerut.
+- Obtain the installer from an actual verified release asset. Compare SHA-256 and file size before opening it.
+- Open `ChatGPT Drop Installer.app` and choose Install/Update as appropriate on a test Intel Mac. Preserve and back up existing setup data. This exact RC14 Update is **not independently accepted** in current evidence.
+- The current package derives from the owner's reference TrueNAS environment; **it does not provide a fully validated generic server/share/account setup wizard**. Other users may require an adapted deployment. Do not claim that SMB host selection is configurable merely because the password can be stored in Keychain.
+- Use a harmless Finder Quick Action batch; require destination bytes/hash/READY; then actual content read through Reader/MCP or Drive. Tailscale private enrollment is per installation and no reusable auth key is included.
+- Reader is separate from upload; Google Drive is an optional mirror; seven-day retention is a separate server job. The 30/900 clipboard settings request retry behavior but are **not** a guaranteed autonomous background timer.
 
-No release, empty placeholder, older version or substitute asset is published. A future release must resolve the source-distribution boundary and retain an accurate verification and validation record. If the owner explicitly authorizes the bundled runtime source exception, that decision must be reflected in this record and the license before distribution. Otherwise, a new source-free artifact needs its own identity and authorization.
+If Gatekeeper refuses the downloaded app, **do not circumvent macOS security automatically**. There is no confirmed Apple notarization acceptance; consult the maintainer.
 
-Nu se publică release gol, versiune veche sau asset substituit. O distribuție viitoare trebuie să rezolve limita divulgării surselor și să păstreze rezultatele reale ale verificărilor. O excepție explicită autorizată de autor trebuie reflectată aici și în licență. În lipsa ei, un artifact fără surse necesită identitate și autorizare proprii.
+## Limitations and next validation
 
-The publication status is also recorded in [release-manifest.json](../release-manifest.json). It is an artifact identity/status record, not a claim that an asset is downloadable.
+Public pre-release distribution is **not** the same as declaring RC14 universally functional. The current client is Intel only; Apple Silicon, Windows/Ubuntu, local folders/external drives and arbitrary SMB NAS compatibility are unvalidated/not implemented as appropriate. A source-free standalone redistribution is a separate future packaging track, not a prerequisite to the owner's specifically authorized RC14 preview.
 
-Stadiul apare și în [release-manifest.json](../release-manifest.json). Manifestul identifică artifactul și starea sa; nu susține că poate fi descărcat.
+[Development history](../HISTORY.md) · [Detailed status](STATUS.md) · [TrueNAS/generic NAS setup](SETUP.md) · [Third-party licenses](../THIRD_PARTY_NOTICES.md).
+
+**Trademark notice:** The name “ChatGPT” belongs to OpenAI; no endorsement or permission is claimed. Public product branding may require revision under [OpenAI's guidelines](https://openai.com/brand/).
