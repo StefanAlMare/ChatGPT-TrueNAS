@@ -1,5 +1,7 @@
 # RC14 V8 artifact and publication record / Artifact și publicare
 
+**Distribution rights and acceptance:** [LICENSE](../LICENSE.md) · [Rights, security levels and GitHub admission gates](RIGHTS.md) · [Naming/marks review](RIGHTS.md#6-names-marks-and-third-party-rights--mărci-și-dependențe). This candidate is **not an approved public source-free installer**.
+
 Reviewed / Revizuit: **8 October 2026 / 8 octombrie 2026**.
 
 ## Exact candidate / Candidatul exact
