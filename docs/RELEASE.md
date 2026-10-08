@@ -2,7 +2,7 @@
 
 [README](../README.md) · [Română](../README.ro.md) · [License](../LICENSE.md) · [GitHub Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases)
 
-**Owner decision on 8 October 2026:** publish the exact latest macOS **RC14 V8** as a **proprietary, non-commercial prerelease**. The previously stated blanket ban on distributing an installer containing readable proprietary Python is **superseded for this specifically authorized DMG**, not for other private source, secrets or user data. Being able to read runtime source within the DMG does **not** license its redistribution, alteration, resale or incorporation into other products.
+**Owner decision on 8 October 2026:** the first public macOS release must be a **sanitized and re-signed RC14 V8 derivative**, offered as a proprietary non-commercial prerelease. The original DMG contains private infrastructure defaults and **must not be published**, irrespective of matching SHA-256. Readable Python runtime may be included under restricted usage terms. Being able to read runtime source within the DMG does **not** license its redistribution, alteration, resale or incorporation into other products.
 
 ## Exact artifact / Identitatea artifactului
 
@@ -22,7 +22,7 @@
 | Generic NAS/end-user onboarding | **NOT VERIFIED; reference-specific assumptions remain** |
 | Prior accepted internal macOS baseline | RC13 (history/rollback reference, **not another public release**) |
 
-**Distribution check:** this document records what is *authorized* and verified. An actual download exists **only when [GitHub Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases) lists a real asset with the exact filename and matching checksum**. Documentation or a tag alone must never be called a completed software release.
+**Distribution check:** the original artifact identity below is **private reference evidence only**. A sanitized release must carry a **different SHA-256**. An actual download exists **only when [GitHub Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases) lists a real asset with the exact filename and matching checksum**. Documentation or a tag alone must never be called a completed software release.
 
 ## Why this is proprietary despite source being readable / De ce rămâne proprietar
 
