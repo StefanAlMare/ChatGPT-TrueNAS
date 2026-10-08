@@ -25,16 +25,29 @@
     "accepted_baseline": "0.9.0-rc13"
   },
   "publication": {
-    "release_published": false,
-    "public_asset_available": false,
-    "status": "DRAFT_PREPARED_NEEDS_PUBLICATION_BY_RELEASE_ID",
-    "draft_release_id": 407214571,
-    "draft_asset_id": 622859835,
-    "proposed_tag": "v0.9.0-rc14",
+    "release_published": true,
+    "public_asset_available": true,
+    "status": "PUBLISHED_GITHUB_RC14_V8_SANITIZED_PRERELEASE",
+    "release_id": 407214571,
+    "tag_name": "v0.9.0-rc14",
+    "release_url": "https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14",
+    "release_is_draft": false,
+    "release_is_prerelease": true,
+    "asset_id": 622859835,
+    "published_file_name": "ChatGPT-Drop-Installer-macOS-x86_64-0.9.0-rc14-SANITIZED.dmg",
+    "published_bytes": 23093113,
+    "published_sha256": "acfa658ee6e9408d18ceb20e6f2ef51a5e807660d5b9ec977b9623a3db39a8c6",
+    "assets": [
+      "LICENSE.md",
+      "SHA256SUMS.txt",
+      "THIRD_PARTY_NOTICES.md",
+      "ChatGPT-Drop-Installer-macOS-x86_64-0.9.0-rc14-SANITIZED.dmg"
+    ],
     "license": "Proprietary Non-Commercial Preview License",
     "commercial_and_source_reuse_require_owner_permission": true,
-    "server_asset_size_and_digest_verified": true,
-    "reason": "Draft exists with complete sanitized DMG, exact server-reported size and SHA. The script incorrectly looked up a draft by tag and received HTTP 404. Publish existing release ID, not a duplicate, then independently redownload the public DMG."
+    "original_reference_dmg_must_never_be_uploaded": true,
+    "verification": "GitHub live release API confirms public prerelease and server asset bytes/digest; user's terminal confirms public asset download with identical SHA-256",
+    "limitations": "Notarization, exact RC14 Install/Update E2E and generic NAS onboarding remain unconfirmed"
   },
   "public_sanitized_artifact": {
     "filename": "ChatGPT-Drop-Installer-macOS-x86_64-0.9.0-rc14-SANITIZED.dmg",
@@ -44,6 +57,11 @@
     "local_sanitization_audit": "PASS_REPORTED",
     "notarization": "NOT_CONFIRMED",
     "graphical_install_update_e2e": "NOT_CONFIRMED",
-    "status": "GITHUB_DRAFT_ASSET_UPLOADED_SERVER_SHA256_MATCH"
+    "status": "PUBLISHED_GITHUB_PRERELEASE",
+    "release_asset_id": 622859835,
+    "github_reported_digest": "sha256:acfa658ee6e9408d18ceb20e6f2ef51a5e807660d5b9ec977b9623a3db39a8c6",
+    "github_asset_state": "uploaded",
+    "user_post_publication_download_sha256_check": "PASS_REPORTED_2026-10-08",
+    "download_url": "https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/download/v0.9.0-rc14/ChatGPT-Drop-Installer-macOS-x86_64-0.9.0-rc14-SANITIZED.dmg"
   }
 }
