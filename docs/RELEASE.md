@@ -28,7 +28,7 @@
 
 The DMG includes a readable owner-authored Python runtime file, such as `ChatGPT Drop Installer.app/Contents/Resources/runtime/chatgpt_drop.py`. The owner knowingly authorizes disclosure **inside this specific installer**. It remains subject to the [non-commercial proprietary license](../LICENSE.md): non-commercial personal/educational/research use may be free; **commercial use, repackaging, redistribution, derivative works, OEM, paid hosting and code integration require prior written permission**. Independent third-party open-source permissions are preserved.
 
-**Română:** DMG-ul original include Python proprietar lizibil. Titularul autorizează distribuirea **acestui fișier exact**, nu reutilizarea codului în alte produse. Utilizarea comercială cere acord scris; licențele terțe se respectă.
+**Română:** DMG-ul original conține configurații private și NU se publică. Titularul autorizează numai distribuirea unei **variante curățate și resemnate**, cu SHA-256 nou, nu reutilizarea codului în alte produse. Utilizarea comercială cere acord scris; licențele terțe se respectă.
 
 ## How to test / Cum se testează
 
