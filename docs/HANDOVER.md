@@ -2,6 +2,8 @@
 
 **Purpose / Scop:** a new conversation must understand exactly **why** ChatGPT Drop exists, how the files arrive, which connector to use, what has passed validation and what actions are prohibited.
 
+**Universal Installer successor:** [user journey](UNIVERSAL_INSTALLER.ro.md), [hardware/storage deployments](HOSTING_AND_STORAGE.md), [security policy](SECURITY_INSTALLER.md), [implementation contract](WIZARD_CONTRACT.md), [acceptance tests](ACCEPTANCE_INSTALLER.md). At this stage these are SPECIFICATIONS, not validated new app features. Do not change the private baseline or claim installation/E2E results without native evidence.
+
 ## Read these five references first / Ordine de citire
 
 1. [README](../README.md) / [Română](../README.ro.md): problem and current status.

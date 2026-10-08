@@ -2,6 +2,12 @@
 
 **Goal:** avoid repeated whole-file uploads into ChatGPT while storing bytes under user control; preserve proprietary source and distribution rights. [Origin](ORIGIN.md) · [Routes](ROUTES.md) · [Rights/security](RIGHTS.md).
 
+## New workstream — Universal Installer
+
+**First implementation target:** macOS + TrueNAS, preserving accepted RC13 behavior. [Step-by-step user journey (RO)](UNIVERSAL_INSTALLER.ro.md) · [English](UNIVERSAL_INSTALLER.md) · [Server/storage deployment](HOSTING_AND_STORAGE.md) · [Security baseline](SECURITY_INSTALLER.md) · [Wizard state-machine and backend contract](WIZARD_CONTRACT.md) · [Native test gates](ACCEPTANCE_INSTALLER.md).
+
+Milestones: M0 documentation/security foundation → M1 macOS/TrueNAS profile and safe SMB setup → M2 secure Reader/MCP deployment → M3 generic NAS and Linux hosts → M4 local/removable storage → M5 Drive/WebDAV/S3 direct adapters → M6 Windows/Ubuntu native clients → M7 universal distribution after validation. **M0 is documented; M1–M7 are not yet certified implementations.**
+
 Priorities are ordered, not release-date commitments. / Prioritățile sunt ordonate, fără promisiuni de date.
 
 | Priority | English | Română | Completion evidence / Dovadă |
