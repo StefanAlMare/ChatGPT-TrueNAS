@@ -1,6 +1,6 @@
 # Setup: TrueNAS, ordinary NAS and personal drives / Configurare
 
-**Current product boundary:** the proven deployment is macOS Intel → SMB/TrueNAS → Reader/MCP or Drive mirror. The owner authorizes the exact RC14 V8 as a **non-commercial proprietary preview** even though it includes readable Python runtime files. Confirm any published DMG under [Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases). The repository still does not include a Reader container or general NAS configuration wizard; other deployments require adaptation/testing.
+**Current product boundary:** the proven deployment is macOS Intel → SMB/TrueNAS → Reader/MCP or Drive mirror. The owner has published **[the sanitized RC14 V8 prerelease](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14)** for non-commercial preview use; only the new `-SANITIZED.dmg` is public, with SHA-256 `acfa658ee6e9408d18ceb20e6f2ef51a5e807660d5b9ec977b9623a3db39a8c6`. Readable Python runtime remains proprietary and is not licensed for reuse. The repository still does not include a Reader container or general NAS configuration wizard; other deployments require adaptation/testing.
 
 ## A. TrueNAS reference checklist / Configurare TrueNAS
 
