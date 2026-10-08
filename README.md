@@ -11,6 +11,12 @@
 
 **ChatGPT-TrueNAS** is the public documentation and distribution project. **ChatGPT Drop** is the Apple/macOS application's current name. This is an independent project, not an official OpenAI, Apple, GitHub, Tailscale or iXsystems product.
 
+## Universal Installer (design phase)
+
+A guided setup will cover official ChatGPT installation, ChatGPT Drop, TrueNAS, generic NAS and other storage, secure Reader/MCP access and retention. This **is not yet part of the RC14 app**.
+
+[Full English guide](docs/UNIVERSAL_INSTALLER.md) · [Complete Romanian guide](docs/UNIVERSAL_INSTALLER.ro.md) · [Hardware and storage](docs/HOSTING_AND_STORAGE.md) · [Security](docs/SECURITY_INSTALLER.md) · [Technical contract](docs/WIZARD_CONTRACT.md) · [Acceptance tests](docs/ACCEPTANCE_INSTALLER.md)
+
 ## Why it exists
 
 We started with a practical problem: repeatedly uploading ZIPs, logs, code snapshots and other large files into ChatGPT conversations uses file-upload/storage allowances and duplicates the same data. The project aims to **avoid consuming ChatGPT file-upload/storage quota unnecessarily**, not to avoid consuming tokens. The original bytes still occupy the owner's NAS (and, if enabled, the Drive mirror); content retrieved for analysis still consumes model context, tool calls and tokens. No “unlimited quota” claim is made.
