@@ -60,20 +60,20 @@ The three independently configured layers are **upload, content reading, and ret
 
 | Area | Verified state |
 | --- | --- |
-| **Accepted macOS baseline** | **0.9.0-rc13**, internally accepted, including private remote-transfer testing |
-| **Latest build candidate** | **ChatGPT Drop 0.9.0-rc14 V8**, Intel x86_64; build, Developer ID signing and DMG audit PASS; **RC14 installation/E2E and notarization not confirmed** |
+| **First public release candidate** | **ChatGPT Drop 0.9.0-rc14 V8**, Intel x86_64, Developer-ID signed; pre-release only. Check [GitHub Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases) for an actual downloadable asset |
+| **Verification** | RC14 V8 native build/DMG signature and integrity audit PASS. **RC14 full installation/E2E, Apple notarization and generic NAS usability not confirmed** |
 | **TrueNAS Reader** | Working after correcting its read-only mount to the live `ChatGPT-Live` tree; large ZIP server-side listing/read demonstrated |
 | **Seven-day retention** | **Operational on reference TrueNAS:** Cron ID 6; initial pass removed 31 expired batch directories; Drive Cloud Sync completed SUCCESS on 8 Oct |
-| **Public installer / Releases** | **No release asset yet.** The exact RC14 V8 DMG contains proprietary `chatgpt_drop.py` source and cannot be distributed unchanged under the source-privacy rule |
+| **Installer distribution** | Owner authorizes distributing the **exact source-bearing RC14 V8 DMG** as a **proprietary non-commercial preview**. Python source may be readable inside the DMG; **reusing it in other products is not licensed**. Publication is confirmed only when an asset is visible under [Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases) |
 | **Generic NAS, local/external disk, Windows, Ubuntu, Apple Silicon** | Architectural directions or unvalidated implementations; **not** advertised as finished products |
 
 [Detailed acceptance matrix](docs/STATUS.md) · [Release artifact record](docs/RELEASE.md) · [Roadmap](docs/ROADMAP.md)
 
 ## Free to use is not open-source
 
-**The intention is free use of officially distributed compiled applications by individuals and organizations**, including internal business use. **Source is private and proprietary.** Written owner approval is required for source access/reuse, derivative development, repackaging, redistribution, resale, paid hosting, white-label/OEM use and commercial exploitation of the product. Third-party licenses and mandatory statutory rights remain intact.
+**Official binaries may be used free of charge for personal, educational and other non-commercial purposes. Commercial/business use requires prior written approval**, as do repackaging, resale, redistribution, paid hosting, white-label/OEM integration and use of proprietary code in other products. The private development repository remains private. Some owner-authored Python files are readable inside this RC14 DMG: viewing them does **not** grant a source-reuse license. Third-party licenses and mandatory statutory rights remain intact.
 
-Publishing documentation on GitHub **does not make the product open-source**. GitHub's Terms nevertheless allow people to view and fork **content that is public on GitHub**. This is why proprietary code, secrets, private logs and a source-bearing DMG are not placed here.
+Publishing on GitHub **does not make the product open-source**. GitHub users can view/fork public materials under GitHub's Terms. The owner expressly allows the selected RC14 V8 DMG to be distributed with visible runtime source, **without authorizing derivative code use**. Private repository content, credentials, signing keys and personal logs are not part of the publication.
 
 [Binding terms and permissions](LICENSE.md) · [Publishing/acceptance levels](docs/RIGHTS.md) · [Security](SECURITY.md) · [Third-party notices](THIRD_PARTY_NOTICES.md)
 
