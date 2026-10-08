@@ -1,5 +1,7 @@
 # File discovery and content analysis / Descoperire și analiză
 
+**For a new Chat, Project or Work:** start with the [handover](HANDOVER.md), then the [three route diagrams](ROUTES.md). Reader/MCP tool access and timing abilities must be checked in the actual session. **Do not claim an automatic timer was started solely because this protocol mentions 30 seconds/900 seconds.**
+
 ## English
 
 The clipboard message is a self-contained **FIND + ANALYZE** contract for the receiving assistant. Its rules are packaged in RC14 V8, but their execution on a real RC14 batch remains unvalidated. Tool availability, access permissions, format support and the assistant's ability to retry determine what can actually run.
