@@ -1,5 +1,8 @@
 # Feature and validation status / Stadiul funcționalităților
 
+
+**Read first / Citește întâi:** [purpose and origin](ORIGIN.md) · [three route diagrams](ROUTES.md) · [setup](SETUP.md) · [handover](HANDOVER.md) · [proprietary rights and admission gates](RIGHTS.md). Note: public deployment is not a supported turnkey install and an existing DMG with embedded proprietary Python source is not approved for public release.
+
 Reviewed / Revizuit: **2026-10-08**.
 
 **Accepted baseline: RC13. Active candidate: RC14 V8. RC14 is not promoted.**
@@ -27,7 +30,7 @@ Acceptarea istorică privește mediul testat. Un build sau audit static PASS nu 
 | SMB StorageBackend abstraction | In RC14 package/source parity; only SMB backend exists / Inclusă RC14; există numai SMB |
 | Generic NAS setup wizard / broad compatibility | Planned; current internal package has fixed provisioning assumptions / Planificat; pachetul actual are presupuneri fixe |
 | Local folder and external-volume destination | **Not implemented** / **Neimplementate** |
-| 168-hour TrueNAS retention | Source ready; native deletion and mirror propagation unvalidated / Sursă pregătită; ștergerea și propagarea nevalidate |
+| 168-hour TrueNAS retention | **Reference TrueNAS PASS, 8 Oct 2026:** cleaner/Cron ID 6 active; initial execution removed **31 expired batch directories**, Cloud Sync PUSH+SYNC ID 1 job finished **SUCCESS**, representative old files absent from NAS and Drive listings. Future automatic expiry cycles still to be observed / **PASS pe TrueNAS de referință, 8 oct.:** Cron activ, 31 loturi șterse, Cloud Sync SUCCESS; monitorizarea execuțiilor ulterioare rămâne |
 | Configurable retention per storage profile | Roadmap / Planificat |
 | Windows / Ubuntu | Packaging preparation only; native release validation pending / Pregătire pachete; validare nativă în așteptare |
 | Apple Silicon native / universal macOS | Not established for this x86_64 candidate / Nestabilit pentru candidatul x86_64 |

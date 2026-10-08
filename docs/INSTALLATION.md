@@ -1,5 +1,8 @@
 # Installation and use / Instalare și utilizare
 
+
+**Start here / Începe aici:** [Why this exists](ORIGIN.md) · [Three data routes](ROUTES.md) · [Setup checklist for TrueNAS, generic NAS and drives](SETUP.md) · [Chat/Work handover](HANDOVER.md) · [Proprietary code and public release gates](RIGHTS.md).
+
 ## English
 
 ### Before you begin
@@ -66,7 +69,7 @@ The planned workflow is to select a managed folder or stable volume identity, ve
 - **Green but no tools:** enable/refresh the Reader tools in the receiving environment or use the configured Drive fallback.
 - **Drive file missing:** traverse the exact hierarchy and follow the 30-second/900-second protocol; search alone is inconclusive.
 - **Large archive cannot download:** use supported member-level Reader tools; historical Drive raw-object limits are not a transfer failure.
-- **Retention:** the 168-hour TrueNAS cleaner is source-ready but native deletion/propagation is pending. No public cleanup package is provided; do not assume automatic deletion is active.
+- **Retention:** the 168-hour cleaner was installed and initially validated on the reference TrueNAS on **8 October 2026** (Cron ID 6, 31 expired batch directories removed, Cloud Sync PUSH+SYNC job SUCCESS). The worker is still private/not distributed here; **other installations must configure and verify it separately**.
 
 ## Română
 
@@ -102,4 +105,4 @@ Un NAS SMB obișnuit necesită adaptare și teste proprii de autentificare, scri
 
 **Folderul local și discul extern nu sunt implementate în RC14 V8.** Coada locală nu este mod de stocare locală. Profilurile viitoare vor necesita selecția folderului/volumului, operații atomice verificate, rută de citire și retenție; deconectarea discului trebuie tratată fără pierderea jurnalului.
 
-La erori de transfer păstrezi coada și jurnalul. Dacă Reader lipsește, activezi/reîmprospătezi uneltele sau folosești oglinda Drive configurată. Pentru fișiere proaspete se aplică traversarea directă la 30 de secunde, maximum 900 de secunde. Arhivele mari necesită citire pe membri când descărcarea integrală nu este disponibilă. Retenția TrueNAS la 168 de ore are implementare privată pregătită, dar ștergerea și propagarea nu sunt încă validate nativ; nu presupune că ștergerea automată este activă.
+La erori de transfer păstrezi coada și jurnalul. Dacă Reader lipsește, activezi/reîmprospătezi uneltele sau folosești oglinda Drive configurată. Pentru fișiere proaspete se aplică traversarea directă la 30 de secunde, maximum 900 de secunde. Arhivele mari necesită citire pe membri când descărcarea integrală nu este disponibilă. Retenția la 168 de ore **a fost instalată și verificată pe TrueNAS-ul de referință la 8 octombrie 2026**: Cron ID 6, 31 de directoare expirate șterse, Cloud Sync PUSH+SYNC SUCCESS. Pe alt NAS trebuie configurată și verificată separat; scriptul privat nu este distribuit aici.

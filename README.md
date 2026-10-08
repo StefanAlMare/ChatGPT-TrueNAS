@@ -1,71 +1,65 @@
-# ChatGPT Drop · ChatGPT-TrueNAS
+# ChatGPT-TrueNAS
+### ChatGPT Drop · macOS client · Proprietary project
 
-**Verified file batches from Finder to your storage, with a precise handoff to ChatGPT.**
+**Send files once. Keep the full bytes in storage you control. Let ChatGPT read only the relevant content.**
 
-[Română](README.ro.md) · [Installation](docs/INSTALLATION.md) · [Architecture](docs/ARCHITECTURE.md) · [History](HISTORY.md) · [Status](docs/STATUS.md) · [Roadmap](docs/ROADMAP.md)
+[Română](README.ro.md) · [Why we built it](docs/ORIGIN.md) · [Route diagrams](docs/ROUTES.md) · [Set up storage](docs/SETUP.md) · [Chat/Work handover](docs/HANDOVER.md) · [History](HISTORY.md) · [Rights and security](docs/RIGHTS.md) · [Credits](docs/CREDITS.md)
 
-**ChatGPT Drop** is the Apple/macOS application. **ChatGPT-TrueNAS** is its public documentation and release repository, maintained by [StefanAlMare](https://github.com/StefanAlMare).
+**ChatGPT-TrueNAS** is the public documentation and distribution project. **ChatGPT Drop** is the Apple/macOS application's current name. This is an independent project, not an official OpenAI, Apple, GitHub, Tailscale or iXsystems product.
 
-The application groups selected files into a stable batch, transfers them to TrueNAS over SMB, verifies destination byte counts and SHA-256 hashes, and prepares a clipboard message that identifies the exact files for ChatGPT. A read-only Reader/MCP service or a configured Google Drive mirror provides access to the content.
+## Why it exists
 
-## Availability and honest release status
+We started with a practical problem: repeatedly uploading ZIPs, logs, code snapshots and other large files into ChatGPT conversations uses file-upload/storage allowances and duplicates the same data. The project aims to **avoid consuming ChatGPT file-upload/storage quota unnecessarily**, not to avoid consuming tokens. The original bytes still occupy the owner's NAS (and, if enabled, the Drive mirror); content retrieved for analysis still consumes model context, tool calls and tokens. No “unlimited quota” claim is made.
 
-| Item | Status |
+We examined existing file-drop/cloud integrations and attempted ways to read NAS data inside ChatGPT. Some tools or connectors appeared in Work/Codex but not ordinary Chat/Projects. A useful file-transfer mechanism was **not automatically a usable ChatGPT read path**. This led to two independent routes: verified file delivery **to storage** and controlled content access **from storage to ChatGPT**. [Read the decision history](docs/ORIGIN.md).
+
+## Three different mechanisms — not one tunnel
+
+| Purpose | Primary | Fallback / lifecycle |
+| --- | --- | --- |
+| **1. Upload from Mac** | Finder Quick Action → ChatGPT Drop → direct SMB → owner-controlled NAS | Private embedded Tailscale/tsnet → the **same** NAS SMB service when direct SMB is unavailable; failed batches remain resumable |
+| **2. Read in Chat/Work** | Read-only TrueNAS Reader through an authorized MCP connector; ZIP member/chunk inspection at source | Configured Google Drive `ChatGPT Project Bridge` mirror, direct category/date/batch traversal; full object transfer only as last resort |
+| **3. Clean up** | Batch UTC timestamp + 168 hours → TrueNAS scheduled cleaner | TrueNAS Cloud Sync `PUSH + SYNC` propagates deletions to Drive; retain permanent backups **outside** the expiring batch tree |
+
+**Tailscale solves the Mac → NAS transport**, not the cloud ChatGPT → NAS reading problem. A green **READY** status proves the batch was transferred and verified; it does **not** prove that the current Chat or Work session can read it.
+
+[**View the three GitHub-rendered diagrams →**](docs/ROUTES.md)
+
+## How to use the reference macOS workflow
+
+1. Select files in Finder → **Quick Actions → Send to ChatGPT Drop**. Original files stay in place.
+2. The app freezes a batch, copies to its private queue, uploads through the chosen private SMB path, uses temporary names, and validates destination **BYTES + SHA-256**. An incomplete transfer retains state for retry.
+3. On success, it places **BATCH + PATH + BYTES + SHA256** in the clipboard.
+4. Paste the message into Chat or Work **with Reader/MCP or Drive access enabled**. Prefer listing and reading source members/parts; do not copy a complete large ZIP into the conversation when source inspection works.
+5. The server can automatically remove managed batches after **seven days**, independently from the Mac application.
+
+[TrueNAS setup](docs/SETUP.md) · [Ordinary NAS and local-drive roadmap](docs/SETUP.md) · [Exact handover protocol for new Chat and Work](docs/HANDOVER.md)
+
+## Current status · 8 October 2026
+
+| Area | Verified state |
 | --- | --- |
-| Latest candidate | **ChatGPT Drop 0.9.0-rc14 V8**, app build 14 |
-| Candidate native build, signing and outer-DMG audit | Recorded PASS on Intel macOS, 12 September 2026 |
-| RC14 V8 graphical Update and end-to-end use | **Not yet validated** |
-| Accepted internal macOS baseline | RC13, including a user-validated off-LAN transfer and Drive content read |
-| Public installer | **Withheld: the exact hash-verified DMG contains proprietary Python source** |
-| GitHub release | **No release published** under the current no-source-publication requirement |
-| Local folder / external drive | Planned; adapters are not implemented |
-| Other SMB NAS devices | Architectural target; no independent compatibility validation |
-| Windows / Ubuntu / Apple Silicon native build | Not validated for public release |
+| **Accepted macOS baseline** | **0.9.0-rc13**, internally accepted, including private remote-transfer testing |
+| **Latest build candidate** | **ChatGPT Drop 0.9.0-rc14 V8**, Intel x86_64; build, Developer ID signing and DMG audit PASS; **RC14 installation/E2E and notarization not confirmed** |
+| **TrueNAS Reader** | Working after correcting its read-only mount to the live `ChatGPT-Live` tree; large ZIP server-side listing/read demonstrated |
+| **Seven-day retention** | **Operational on reference TrueNAS:** Cron ID 6; initial pass removed 31 expired batch directories; Drive Cloud Sync completed SUCCESS on 8 Oct |
+| **Public installer / Releases** | **No release asset yet.** The exact RC14 V8 DMG contains proprietary `chatgpt_drop.py` source and cannot be distributed unchanged under the source-privacy rule |
+| **Generic NAS, local/external disk, Windows, Ubuntu, Apple Silicon** | Architectural directions or unvalidated implementations; **not** advertised as finished products |
 
-This status was reviewed on **8 October 2026** against the development records. Historical PASS results describe their recorded environment; they are not fresh RC14 end-to-end tests. See the [full validation matrix](docs/STATUS.md) and [artifact record](docs/RELEASE.md).
+[Detailed acceptance matrix](docs/STATUS.md) · [Release artifact record](docs/RELEASE.md) · [Roadmap](docs/ROADMAP.md)
 
-## Free application, private proprietary source
+## Free to use is not open-source
 
-**Anyone may use an officially released compiled application free of charge, including for personal or business use.** The application source remains proprietary and private. Using, modifying or redistributing the proprietary source requires **prior written permission from StefanAlMare**. This repository does not grant an open-source license.
+**The intention is free use of officially distributed compiled applications by individuals and organizations**, including internal business use. **Source is private and proprietary.** Written owner approval is required for source access/reuse, derivative development, repackaging, redistribution, resale, paid hosting, white-label/OEM use and commercial exploitation of the product. Third-party licenses and mandatory statutory rights remain intact.
 
-The [license](LICENSE.md) distinguishes free binary use from source rights. Third-party components retain their own licenses. External accounts, storage, connectivity and service charges are separate from the free application license.
+Publishing documentation on GitHub **does not make the product open-source**. GitHub's Terms nevertheless allow people to view and fork **content that is public on GitHub**. This is why proprietary code, secrets, private logs and a source-bearing DMG are not placed here.
 
-## How it works
+[Binding terms and permissions](LICENSE.md) · [Publishing/acceptance levels](docs/RIGHTS.md) · [Security](SECURITY.md) · [Third-party notices](THIRD_PARTY_NOTICES.md)
 
-1. Select ordinary files in Finder and choose **Quick Actions → Send to ChatGPT Drop**.
-2. The action copies files into a hidden queue. The original Finder files stay in place.
-3. After inputs settle, the client freezes a batch with a persistent device identity and a collision-resistant batch ID.
-4. It prefers direct SMB on the LAN or a reachable private network. Off-LAN, the RC13 architecture uses an embedded Tailscale/tsnet helper and a loopback-only proxy to the same SMB destination.
-5. Temporary writes, destination byte/SHA verification and a persisted journal protect retry/resume. READY and the clipboard handoff follow whole-batch verification.
-6. Paste the message into a ChatGPT environment with the appropriate Reader or Drive connector. Content access depends on that environment and its permissions.
+## Project and acknowledgements
 
-The active layout is `ChatGPT-Live/<category>/<date>/<batch-id>/<filename>`. Categories retain their established names: `Poze`, `Documente`, `Loguri`, `Arhive`, `Video`, `Audio`, `Diverse`.
+**Initiative, product direction and acceptance decisions:** [@StefanAlMare](https://github.com/StefanAlMare). **Technical research, drafting and development assistance:** ChatGPT (OpenAI), used as an AI assistant under the project owner's direction. This credit does not imply an OpenAI partnership, copyright transfer or endorsement. See [credits](docs/CREDITS.md).
 
-RC14 V8's clipboard protocol requests immediate Reader lookup, immediate direct Drive traversal when Reader is unavailable, then retries every **30 seconds** for up to **900 seconds** from the first lookup attempt. It asks the assistant to inspect content at source and transfer entire objects only when needed. These are instructions carried in the handoff, not proof that every ChatGPT environment executes them automatically. [Protocol details](docs/PROTOCOL.md).
+**Naming notice:** “ChatGPT” is an OpenAI trademark. The current project/app names must be reviewed against [OpenAI's branding guidelines](https://openai.com/brand/) before public software distribution; no trademark permission or endorsement is claimed.
 
-## Installation and first use
-
-The exact candidate has been recovered and hash-verified, but it is not publicly downloadable because it includes proprietary runtime source. If distribution is authorized, the expected entry point is **ChatGPT Drop Installer.app**, with **Install**, **Update** and **Uninstall**. Installation into `/Applications` requests normal macOS administrator authorization. RC14 Update remains a pending validation gate.
-
-The current candidate is an **Intel x86_64 macOS build** derived from an internal deployment. It is not yet a universal self-service installer for arbitrary NAS accounts: endpoint provisioning and deployment-specific settings still require maintainer adaptation and testing. The SMB credential menu is not a complete storage setup wizard.
-
-The [installation guide](docs/INSTALLATION.md) covers TrueNAS preparation, the macOS workflow, private remote access, generic SMB NAS requirements and the local-storage roadmap. Reader deployment also needs a separately supplied authorized package; this public repository contains no server implementation or container image.
-
-## Designed to fail safely
-
-- Local staged files and the frozen journal survive transfer failures.
-- READY means the batch verified; it does not mean ChatGPT already read the files.
-- SMB credentials and Tailscale enrollment material belong in macOS Keychain.
-- TrueNAS remains the storage authority; Google Drive is a read mirror.
-- Reader is read-only, confined to its configured root and rejects symlink escapes.
-- Public HTTPS/Funnel/zrok/SFTP experiments are historical and are not part of the current upload architecture.
-
-[Architecture and trust boundaries](docs/ARCHITECTURE.md) · [Security and support](SECURITY.md)
-
-## Development and participation
-
-[HISTORY.md](HISTORY.md) follows the project from the September 2026 prototype through every numbered RC stage and RC14 V8, including failed and superseded candidates. [The roadmap](docs/ROADMAP.md) prioritizes RC14 validation, public distribution readiness, storage profiles and native platform testing. The public Git history begins with this documentation publication; it does not recreate or expose the private development Git history.
-
-Use [Issues](https://github.com/StefanAlMare/ChatGPT-TrueNAS/issues) for sanitized bug reports, documentation corrections and feature requests. Source contributions and source access require written permission. No GitHub Actions workflows are supplied.
-
-ChatGPT, OpenAI, Apple, TrueNAS, Google Drive and Tailscale are names of their respective owners. This project does not claim their sponsorship or endorsement.
+[Report a sanitized issue](https://github.com/StefanAlMare/ChatGPT-TrueNAS/issues) · [See full technical history](HISTORY.md)

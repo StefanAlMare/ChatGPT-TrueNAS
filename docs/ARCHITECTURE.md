@@ -1,6 +1,6 @@
 # Technical architecture / Arhitectură tehnică
 
-[English README](../README.md) · [README în română](../README.ro.md)
+[English README](../README.md) · [README în română](../README.ro.md) · [Why](ORIGIN.md) · [Three route diagrams](ROUTES.md) · [Handover](HANDOVER.md) · [Rights/security levels](RIGHTS.md)
 
 ## English
 
@@ -17,7 +17,7 @@
 | TrueNAS Reader | List/find/read files and inspect ZIP members | Root-confined, read-only MCP service; no shell, upload, rename or delete tools |
 | Central secure MCP tunnel | Connect the Reader to an authorized ChatGPT environment | One centrally managed tunnel; separate from SMB transport |
 | Drive mirror | Optional category-preserving read fallback | Synchronization delay and connector permissions apply |
-| Retention executor | Expire eligible stored batches | Separate server-side track; native 168-hour deletion validation pending |
+| Retention executor | Expire eligible stored batches | **Reference deployment PASS 8 Oct 2026:** 31 expired batch directories removed by 168-hour cleaner, configured Drive PUSH+SYNC completed SUCCESS; monitor future automated runs |
 
 The private runtime implementation is not included in this repository. A native application shell does not mean every internal component is compiled machine code: the recorded RC11–RC14 runtime uses Python in a virtual environment. Any future public installer must be reviewed for the owner's source-distribution restrictions as well as secrets before publication.
 
@@ -59,7 +59,7 @@ The intended public storage-profile model separates SMB NAS, local folders and e
 
 Clientul are o acțiune Finder, o interfață nativă Swift/AppKit în bara de meniu, un motor tranzacțional Python privat și un helper Go/tsnet pentru acces privat din afara LAN. RC11 a înlocuit runtime-ul PyInstaller one-file problematic cu Python într-un mediu virtual; denumirea „aplicație nativă” nu înseamnă că fiecare componentă internă este cod mașină compilat. Orice viitor installer public trebuie verificat și pentru restricția autorului privind distribuirea surselor, pe lângă verificarea datelor sensibile.
 
-TrueNAS păstrează fișierele autoritative și oferă SMB. Reader/MCP este un serviciu central separat, exclusiv pentru citire, limitat la rădăcina configurată. Tunelul MCP central servește accesului ChatGPT, nu transferului SMB. Oglinda Google Drive este o rută opțională de citire, iar retenția este o componentă separată, încă fără validare nativă completă a ștergerii la 168 de ore.
+TrueNAS păstrează fișierele autoritative și oferă SMB. Reader/MCP este un serviciu central separat, exclusiv pentru citire, limitat la rădăcina configurată. Tunelul MCP central servește accesului ChatGPT, nu transferului SMB. Oglinda Google Drive este o rută opțională de citire, iar retenția este o componentă separată; pe TrueNAS de referință, prima ștergere automată configurată pentru 168 de ore a eliminat 31 de directoare și sincronizarea Drive s-a încheiat cu SUCCESS la 8 octombrie 2026.
 
 Motorul așteaptă stabilizarea intrărilor, apoi înregistrează un lot înghețat. ID-ul combină timpul UTC, identitatea persistentă aleatorie a dispozitivului și un sufix aleatoriu. Fiecare fișier are categorie, cale, număr de octeți și SHA-256. Scrierea folosește un nume temporar `.partial-*` și promovare atomică. Fișierele existente sunt reutilizate numai după verificarea identității. Jurnalul și copiile locale pregătite rămân disponibile la erori, pentru reluarea aceluiași lot.
 
