@@ -37,7 +37,7 @@ Acceptarea istorică privește mediul testat. Un build sau audit static PASS nu 
 | Universal three-platform distribution | Not released; gated on native acceptance on each platform / Nelansată; necesită acceptarea fiecărei platforme |
 | RC14 graphical Update/state preservation/app launch | **Not yet validated** / **Încă nevalidate** |
 | RC14 V8 DMG bytes/SHA, integrity and signatures | Fresh checks PASS on 8 October, without install / PASS reverificat la 8 octombrie, fără instalare |
-| RC14 V8 public binary policy | **Owner-authorized exception for this exact DMG:** bundled Python source can be viewed but cannot be reused in other products without permission; non-commercial preview use only / **Excepție autorizată:** sursa Python vizibilă nu permite reutilizarea sau exploatarea comercială fără acord scris |
+| RC14 V8 public binary policy | **Only a sanitized and newly signed RC14 V8 derivative is authorized for public prerelease**; the original embeds private NAS/SMB/Tailscale data and is blocked. Readable Python in the sanitized package does not authorize code reuse / **Doar varianta curățată și resemnată poate fi publicată**; originalul conține date private, iar codul lizibil nu poate fi reutilizat fără permisiune |
 | Notarization acceptance | Not established by available evidence / Nedovedită de informațiile disponibile |
 
 ## RC14 acceptance still required / Validări RC14 rămase
