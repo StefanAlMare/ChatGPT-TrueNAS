@@ -1,6 +1,8 @@
 # Installation and use / Instalare și utilizare
 
 
+**Universal Installer work in progress / Proiectare installer universal:** [full RO step-by-step](UNIVERSAL_INSTALLER.ro.md) · [EN guide](UNIVERSAL_INSTALLER.md) · [storage/server choices](HOSTING_AND_STORAGE.md) · [security requirements](SECURITY_INSTALLER.md). This does not change the RC14 prerelease's current limited deployment support.
+
 **Start here / Începe aici:** [Why this exists](ORIGIN.md) · [Three data routes](ROUTES.md) · [Setup checklist for TrueNAS, generic NAS and drives](SETUP.md) · [Chat/Work handover](HANDOVER.md) · [Proprietary code and public release gates](RIGHTS.md).
 
 ## English
