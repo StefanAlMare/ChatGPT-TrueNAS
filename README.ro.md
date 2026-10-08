@@ -9,6 +9,12 @@
 
 **[Descarcă primul pre-release public RC14 V8 →](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14)** — macOS Intel, curățat de date private, licență proprietară necomercială.
 
+### Proiectul următor — Universal Installer (ÎN PROIECTARE)
+
+**[Ghid complet de instalare în română →](docs/UNIVERSAL_INSTALLER.ro.md)** · **[Versiunea engleză](docs/UNIVERSAL_INSTALLER.md)** · **[TrueNAS, alte NAS-uri, discuri și cloud](docs/HOSTING_AND_STORAGE.md)** · **[Securitate detaliată](docs/SECURITY_INSTALLER.md)** · **[Contractul wizardului](docs/WIZARD_CONTRACT.md)** · **[32 de teste de acceptare](docs/ACCEPTANCE_INSTALLER.md)**.
+
+Fluxul începe cu aplicația oficială ChatGPT pe calculator și continuă cu ChatGPT Drop, alegerea stocării, Reader read-only, autorizarea conectorului, teste cap-coadă și retenție sigură. **Documentele definesc produsul de construit, nu pretind că installerul generalist este deja implementat în RC14.**
+
 **ChatGPT-TrueNAS** este proiectul public de documentație și distribuție. **ChatGPT Drop** este denumirea actuală a aplicației pentru Apple/macOS. Proiect independent, neafiliat oficial OpenAI, Apple, GitHub, Tailscale sau iXsystems.
 
 ## De ce l-am creat
