@@ -5,6 +5,10 @@
 
 [Română](README.ro.md) · [Why we built it](docs/ORIGIN.md) · [Route diagrams](docs/ROUTES.md) · [Set up storage](docs/SETUP.md) · [Chat/Work handover](docs/HANDOVER.md) · [History](HISTORY.md) · [Rights and security](docs/RIGHTS.md) · [Credits](docs/CREDITS.md)
 
+
+
+**[Download the first public RC14 V8 prerelease →](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14)** — Intel macOS, privacy-sanitized, proprietary non-commercial preview.
+
 **ChatGPT-TrueNAS** is the public documentation and distribution project. **ChatGPT Drop** is the Apple/macOS application's current name. This is an independent project, not an official OpenAI, Apple, GitHub, Tailscale or iXsystems product.
 
 ## Why it exists
@@ -60,11 +64,11 @@ The three independently configured layers are **upload, content reading, and ret
 
 | Area | Verified state |
 | --- | --- |
-| **First public release candidate** | **ChatGPT Drop 0.9.0-rc14 V8**, Intel x86_64, Developer-ID signed; pre-release only. Check [GitHub Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases) for an actual downloadable asset |
+| **First public prerelease** | **[ChatGPT Drop 0.9.0-rc14 V8 — Sanitized](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14)**, macOS Intel x86_64, published 8 October 2026 |
 | **Verification** | RC14 V8 native build/DMG signature and integrity audit PASS. **RC14 full installation/E2E, Apple notarization and generic NAS usability not confirmed** |
 | **TrueNAS Reader** | Working after correcting its read-only mount to the live `ChatGPT-Live` tree; large ZIP server-side listing/read demonstrated |
 | **Seven-day retention** | **Operational on reference TrueNAS:** Cron ID 6; initial pass removed 31 expired batch directories; Drive Cloud Sync completed SUCCESS on 8 Oct |
-| **Installer distribution** | **The original RC14 V8 DMG contains private NAS/SMB/Tailscale defaults and must not be published.** The first approved public asset will be a **sanitized, newly signed RC14 V8 derivative** with its own SHA-256, under the proprietary non-commercial license. Availability is confirmed only by a real asset in [Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases) |
+| **Installer distribution** | **Published:** privacy-sanitized, re-signed RC14 V8 DMG (23,093,113 bytes; SHA-256 `acfa658ee6e9408d18ceb20e6f2ef51a5e807660d5b9ec977b9623a3db39a8c6`). The original internal DMG remains private. **Free non-commercial use only**; no source reuse/commercial rights without written permission |
 | **Generic NAS, local/external disk, Windows, Ubuntu, Apple Silicon** | Architectural directions or unvalidated implementations; **not** advertised as finished products |
 
 [Detailed acceptance matrix](docs/STATUS.md) · [Release artifact record](docs/RELEASE.md) · [Roadmap](docs/ROADMAP.md)
