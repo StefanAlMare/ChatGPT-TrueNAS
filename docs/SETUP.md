@@ -1,5 +1,7 @@
 # Setup: TrueNAS, ordinary NAS and personal drives / Configurare
 
+**New guided installer project:** [Romanian first-run wizard](UNIVERSAL_INSTALLER.ro.md) · [English](UNIVERSAL_INSTALLER.md) · [Detailed per-hardware guide](HOSTING_AND_STORAGE.md) · [Security hardening and threats](SECURITY_INSTALLER.md). **These are specifications for the future general installer, not executable installers or a ready-to-deploy public Reader image.**
+
 **Current product boundary:** the proven deployment is macOS Intel → SMB/TrueNAS → Reader/MCP or Drive mirror. The owner has published **[the sanitized RC14 V8 prerelease](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14)** for non-commercial preview use; only the new `-SANITIZED.dmg` is public, with SHA-256 `acfa658ee6e9408d18ceb20e6f2ef51a5e807660d5b9ec977b9623a3db39a8c6`. Readable Python runtime remains proprietary and is not licensed for reuse. The repository still does not include a Reader container or general NAS configuration wizard; other deployments require adaptation/testing.
 
 ## A. TrueNAS reference checklist / Configurare TrueNAS
