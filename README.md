@@ -23,6 +23,27 @@ We examined existing file-drop/cloud integrations and attempted ways to read NAS
 
 **Tailscale solves the Mac → NAS transport**, not the cloud ChatGPT → NAS reading problem. A green **READY** status proves the batch was transferred and verified; it does **not** prove that the current Chat or Work session can read it.
 
+### Data-flow map
+
+```mermaid
+flowchart TD
+    F["Finder → ChatGPT Drop"] --> S{"SMB direct available?"}
+    S -->|Yes| N["TrueNAS / NAS: ChatGPT-Live"]
+    S -->|No| T["Embedded private Tailscale / tsnet"]
+    T --> N
+    N --> V["Verify BYTES + SHA-256 → READY"]
+    N --> R{"Reader/MCP available in Chat or Work?"}
+    R -->|Yes| M["Read-only Reader: ZIP members and chunks"]
+    R -->|No| D["TrueNAS Cloud Sync → Google Drive mirror"]
+    D --> P["Drive connector: category/date/batch"]
+    M --> A["Relevant source content → ChatGPT"]
+    P --> A
+    N -.-> X["168h retention → delete batch"]
+    X -.-> Y["PUSH + SYNC → propagate deletion to Drive"]
+```
+
+The three independently configured layers are **upload, content reading, and retention**. The detailed diagrams also show failure/retry and the rule against full-archive transfer by default.
+
 [**View the three GitHub-rendered diagrams →**](docs/ROUTES.md)
 
 ## How to use the reference macOS workflow
