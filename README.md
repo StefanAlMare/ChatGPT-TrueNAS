@@ -64,7 +64,7 @@ The three independently configured layers are **upload, content reading, and ret
 | **Verification** | RC14 V8 native build/DMG signature and integrity audit PASS. **RC14 full installation/E2E, Apple notarization and generic NAS usability not confirmed** |
 | **TrueNAS Reader** | Working after correcting its read-only mount to the live `ChatGPT-Live` tree; large ZIP server-side listing/read demonstrated |
 | **Seven-day retention** | **Operational on reference TrueNAS:** Cron ID 6; initial pass removed 31 expired batch directories; Drive Cloud Sync completed SUCCESS on 8 Oct |
-| **Installer distribution** | Owner authorizes distributing the **exact source-bearing RC14 V8 DMG** as a **proprietary non-commercial preview**. Python source may be readable inside the DMG; **reusing it in other products is not licensed**. Publication is confirmed only when an asset is visible under [Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases) |
+| **Installer distribution** | **The original RC14 V8 DMG contains private NAS/SMB/Tailscale defaults and must not be published.** The first approved public asset will be a **sanitized, newly signed RC14 V8 derivative** with its own SHA-256, under the proprietary non-commercial license. Availability is confirmed only by a real asset in [Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases) |
 | **Generic NAS, local/external disk, Windows, Ubuntu, Apple Silicon** | Architectural directions or unvalidated implementations; **not** advertised as finished products |
 
 [Detailed acceptance matrix](docs/STATUS.md) · [Release artifact record](docs/RELEASE.md) · [Roadmap](docs/ROADMAP.md)
