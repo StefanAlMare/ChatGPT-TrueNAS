@@ -6,7 +6,7 @@ Priorities are ordered, not release-date commitments. / Prioritățile sunt ordo
 
 | Priority | English | Română | Completion evidence / Dovadă |
 | --- | --- | --- | --- |
-| 1 | Publish owner-authorized proprietary non-commercial RC14 V8 prerelease; develop a future source-free generic build | Lansare pre-release RC14 V8 proprietară/necomercială și apoi pachet generic fără sursă în clar | Exact DMG checksum, license, upstream notices, real GitHub asset, transparent unsupported/untested limits / DMG exact, licență, checksum, asset real și limite clare |
+| 1 | **COMPLETED:** published [sanitized proprietary RC14 V8 prerelease](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14); follow-up: generalized safe, configurable distribution | **REALIZAT:** primul pre-release RC14 V8 curățat și verificat; urmează installer universal configurabil | GitHub public asset `v0.9.0-rc14`, matching SHA-256 `acfa658ee6e9408d18ceb20e6f2ef51a5e807660d5b9ec977b9623a3db39a8c6`; source access and commercial use remain restricted |
 | 2 | Complete RC14 V8 native Update and E2E acceptance | Validarea nativă Update și E2E RC14 V8 | State preserved; real verified batch; actual content read; regression matrix / Stare păstrată, lot verificat, conținut citit, regresii |
 | 3 | General deployment provisioning | Configurare pentru instalări independente | No private deployment assumptions; host/share/account/peer setup tested / Fără presupuneri private; configurare testată |
 | 4 | Implement local-folder backend | Implementarea backend-ului local | Same journal, atomic write, byte/SHA and READY semantics; native E2E / Aceleași garanții, test nativ |
