@@ -26,7 +26,17 @@
   "publication": {
     "release_published": false,
     "public_asset_available": false,
-    "required_release_type_if_authorized": "prerelease",
-    "reason": "Exact DMG includes proprietary Python source; current owner instruction prohibits public source disclosure. No substitute artifact was created."
+    "status": "PENDING_PUBLIC_GITHUB_RELEASE_ASSET_UPLOAD",
+    "proposed_tag": "v0.9.0-rc14",
+    "required_release_type": "prerelease",
+    "owner_authorized_publication_of_exact_source_bearing_dmg": true,
+    "authorization_scope_sha256": "125802a96df9b169960ed09f65cdb893b22f85f1875d285ea67b942a9b3c6f34",
+    "license": "Proprietary Non-Commercial Preview License",
+    "commercial_business_use_requires_prior_written_permission": true,
+    "proprietary_source_reuse_in_other_products_requires_prior_written_permission": true,
+    "readable_proprietary_python_runtime_is_intentionally_disclosed": true,
+    "general_nas_configurability_not_validated": true,
+    "github_release_notes_source": "releases/v0.9.0-rc14.md",
+    "statement": "Owner permits publication of this exact SHA-matched source-bearing RC14 DMG as a non-commercial prerelease; read-only source visibility grants no permission for source reuse. Actual public download must be independently verified after asset upload."
   }
 }

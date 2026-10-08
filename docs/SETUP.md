@@ -1,6 +1,6 @@
 # Setup: TrueNAS, ordinary NAS and personal drives / Configurare
 
-**Current product boundary:** the proven deployment is macOS Intel → SMB/TrueNAS → Reader/MCP or Drive mirror. The public repository currently contains **documentation, not an installable Reader image or a source-free macOS installer**. A deployment-ready package and account provisioning still need the maintainer's involvement.
+**Current product boundary:** the proven deployment is macOS Intel → SMB/TrueNAS → Reader/MCP or Drive mirror. The owner authorizes the exact RC14 V8 as a **non-commercial proprietary preview** even though it includes readable Python runtime files. Confirm any published DMG under [Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases). The repository still does not include a Reader container or general NAS configuration wizard; other deployments require adaptation/testing.
 
 ## A. TrueNAS reference checklist / Configurare TrueNAS
 
@@ -36,6 +36,6 @@ Planned profiles: “This Mac” and “External Drive”. The intended implemen
 | Reader | Real directory, metadata, ZIP-member and content reads succeed in the intended conversation |
 | Drive fallback | Direct traversal finds exact batch; actual content readable, not just metadata |
 | Retention | Cron is enabled; expired managed batch removed; corresponding Cloud Sync succeeds |
-| Installer/release | Binary has **no prohibited proprietary source**, no secrets, correct third-party notices, checksum/signature checks and tested deployment |
+| Installer/release | Owner-authorized RC14 may expose proprietary runtime source (no reuse rights); **no secrets**, proper upstream notices, checksum/signing verified; RC14 E2E, notarization and generic NAS remain unverified |
 
 [Routes and diagrams](ROUTES.md) · [Handover](HANDOVER.md) · [Security and acceptance gates](RIGHTS.md)

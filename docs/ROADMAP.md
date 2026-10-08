@@ -6,7 +6,7 @@ Priorities are ordered, not release-date commitments. / Prioritățile sunt ordo
 
 | Priority | English | Română | Completion evidence / Dovadă |
 | --- | --- | --- | --- |
-| 1 | Resolve public installer packaging and source-disclosure boundary | Rezolvarea împachetării publice și a limitei divulgării surselor | Source/secret audit, complete third-party notices, exact authorized artifact / Audit, notificări și artifact autorizat exact |
+| 1 | Publish owner-authorized proprietary non-commercial RC14 V8 prerelease; develop a future source-free generic build | Lansare pre-release RC14 V8 proprietară/necomercială și apoi pachet generic fără sursă în clar | Exact DMG checksum, license, upstream notices, real GitHub asset, transparent unsupported/untested limits / DMG exact, licență, checksum, asset real și limite clare |
 | 2 | Complete RC14 V8 native Update and E2E acceptance | Validarea nativă Update și E2E RC14 V8 | State preserved; real verified batch; actual content read; regression matrix / Stare păstrată, lot verificat, conținut citit, regresii |
 | 3 | General deployment provisioning | Configurare pentru instalări independente | No private deployment assumptions; host/share/account/peer setup tested / Fără presupuneri private; configurare testată |
 | 4 | Implement local-folder backend | Implementarea backend-ului local | Same journal, atomic write, byte/SHA and READY semantics; native E2E / Aceleași garanții, test nativ |
@@ -19,6 +19,6 @@ Priorities are ordered, not release-date commitments. / Prioritățile sunt ordo
 | 11 | Evaluate Apple Silicon and supported macOS matrix | Evaluarea Apple Silicon și versiunilor macOS | Native platform results, documented runtime requirements and distribution checks / Rezultate native și cerințe documentate |
 | 12 | Universal distribution package | Pachet de distribuție pentru toate platformele | All native platform gates, per-installer checksums and manifests / Validări complete, checksum-uri și manifeste |
 
-Commercial/OEM or hosted-service arrangements remain a separate future track. A third-party code license is distinct from any hosted-service agreement. Free application use is already the owner's distribution policy; it does not establish completion of those future tracks.
+Commercial/OEM or hosted-service arrangements remain a separate future track. A third-party code license is distinct from any hosted-service agreement. Free **non-commercial** preview use is the owner's current policy; business/commercial use requires written authorization. This does not complete future platform tracks.
 
-Aranjamentele comerciale/OEM sau pentru servicii găzduite sunt o etapă viitoare separată. Licența codului terț nu înlocuiește acordul pentru serviciul găzduit. Utilizarea gratuită a aplicației este politica autorului, fără a însemna că aceste etape viitoare sunt finalizate.
+Aranjamentele comerciale/OEM sau pentru servicii găzduite sunt o etapă viitoare separată. Licența codului terț nu înlocuiește acordul pentru serviciul găzduit. Utilizarea **necomercială** gratuită a versiunii oficiale este politica actuală; folosirea comercială cere acord scris și nu înseamnă finalizarea etapelor viitoare.

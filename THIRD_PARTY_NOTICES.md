@@ -1,8 +1,8 @@
 # Third-party notices / Componente terțe
 
-The proprietary application license does not replace third-party licenses. This public repository distributes documentation, with no application asset currently published. The exact candidate's embedded Tailscale notice is reproduced below. Upstream: [Tailscale v1.102.3 license](https://github.com/tailscale/tailscale/blob/v1.102.3/LICENSE).
+The proprietary application license does not replace third-party licenses. The owner authorizes RC14 V8 as a **proprietary non-commercial prerelease**; verify whether a real binary is available under [Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases). The exact candidate's embedded Tailscale notice is reproduced below and must accompany distribution. Upstream: [Tailscale v1.102.3 license](https://github.com/tailscale/tailscale/blob/v1.102.3/LICENSE).
 
-Licența proprietară a aplicației nu înlocuiește licențele componentelor terțe. Repository-ul distribuie documentație; momentan nu publică un asset al aplicației. Mai jos este notificarea Tailscale inclusă în candidatul exact.
+Licența proprietară a aplicației nu înlocuiește licențele componentelor terțe. Titularul autorizează RC14 V8 ca **pre-release proprietar necomercial**; existența unui fișier se verifică în [Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases). Mai jos este notificarea Tailscale inclusă în candidat, care trebuie păstrată la distribuție.
 
 ## Runtime wheel inventory inspected on 8 October 2026
 
@@ -21,7 +21,7 @@ Licența proprietară a aplicației nu înlocuiește licențele componentelor te
 | pyspnego | 0.12.2 | MIT |
 | smbprotocol | 1.17.0 | MIT |
 
-This is an inspected wheel inventory, not a complete transitive software bill of materials. The Go helper, runtime requirements and all bundled dependency notices need a complete distribution audit before a new public package is prepared. The code license and any Tailscale hosted-service agreement are separate matters. No third-party endorsement is implied.
+This is an inspected wheel inventory, not a complete transitive software bill of materials. Future repackaging and commercial use require a complete review of Go helper and dependency notices. This inventory is not a complete software bill of materials; independent upstream rights remain in force. The code license and any Tailscale hosted-service agreement are separate matters. No third-party endorsement is implied.
 
 Acesta este inventarul wheel-urilor inspectate, nu lista exhaustivă a tuturor dependențelor tranzitive. Helperul Go, runtime-ul și notificările dependențelor necesită audit complet pentru un nou pachet public. Licența codului și acordul unui serviciu Tailscale găzduit sunt distincte. Nu se pretinde susținerea titularilor.
 
