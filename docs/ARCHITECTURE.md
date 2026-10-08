@@ -17,7 +17,7 @@
 | TrueNAS Reader | List/find/read files and inspect ZIP members | Root-confined, read-only MCP service; no shell, upload, rename or delete tools |
 | Central secure MCP tunnel | Connect the Reader to an authorized ChatGPT environment | One centrally managed tunnel; separate from SMB transport |
 | Drive mirror | Optional category-preserving read fallback | Synchronization delay and connector permissions apply |
-| Retention executor | Expire eligible stored batches | Separate server-side track; native 168-hour deletion validation pending |
+| Retention executor | Expire eligible stored batches | Separate server-side script on the reference TrueNAS; 168-hour initial deletion of 31 expired batches and Google Drive PUSH+SYNC job SUCCESS verified on 8 Oct 2026. Future expiry cycles and local/external storage retention remain separate validations. |
 
 The private runtime implementation is not included in this repository. A native application shell does not mean every internal component is compiled machine code: the recorded RC11–RC14 runtime uses Python in a virtual environment. Any future public installer must be reviewed for the owner's source-distribution restrictions as well as secrets before publication.
 
