@@ -19,4 +19,4 @@ The project's work evolved through many hands-on iterations from early September
 - **Google Drive:** optional read-fallback mirror and connector.
 - **OpenAI ChatGPT:** optional AI analysis environment.
 
-See [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md) for attribution and licensing. No third-party affiliation or endorsement is implied. Original owner-controlled code remains private and proprietary; third-party code retains upstream license rights.
+See [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md) for attribution and licensing. No third-party affiliation or endorsement is implied. Owner-authored code remains proprietary even where the officially distributed RC14 V8 preview contains readable Python runtime source. Such visibility grants no right to reuse the code in other products. The private development repository is not published, and third-party code retains its independent licenses.
