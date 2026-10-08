@@ -1,0 +1,12 @@
+# This public repository is documentation only.
+.DS_Store
+work/
+*.dmg
+*.pkg
+*.zip
+*.key
+*.pem
+*.p12
+*.pfx
+.env
+secrets/

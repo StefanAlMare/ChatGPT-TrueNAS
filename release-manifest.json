@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-08",
+  "product": "ChatGPT Drop",
+  "candidate": "0.9.0-rc14",
+  "recipe_revision": "V8",
+  "app_build": 14,
+  "platform": "macOS-x86_64",
+  "artifact": {
+    "filename": "ChatGPT-Drop-Installer-macOS-x86_64-0.9.0-rc14.dmg",
+    "bytes": 23092580,
+    "sha256": "125802a96df9b169960ed09f65cdb893b22f85f1875d285ea67b942a9b3c6f34",
+    "recovered": true,
+    "local_sha256_verified": true,
+    "disk_image_integrity_verified": true,
+    "dmg_installer_app_helper_signatures_verified": true,
+    "proprietary_python_source_present": true
+  },
+  "validation": {
+    "native_build_and_outer_audit_recorded": "PASS",
+    "graphical_update": "NOT_YET_VALIDATED",
+    "runtime_e2e": "NOT_YET_VALIDATED",
+    "rc14_promoted": false,
+    "accepted_baseline": "0.9.0-rc13"
+  },
+  "publication": {
+    "release_published": false,
+    "public_asset_available": false,
+    "required_release_type_if_authorized": "prerelease",
+    "reason": "Exact DMG includes proprietary Python source; current owner instruction prohibits public source disclosure. No substitute artifact was created."
+  }
+}
