@@ -5,6 +5,10 @@
 
 [English](README.md) · [De ce a apărut](docs/ORIGIN.md) · [Schemele traseelor](docs/ROUTES.md) · [Configurare](docs/SETUP.md) · [Handover Chat/Work](docs/HANDOVER.md) · [Istoric](HISTORY.md) · [Drepturi și securitate](docs/RIGHTS.md) · [Credite](docs/CREDITS.md)
 
+
+
+**[Descarcă primul pre-release public RC14 V8 →](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14)** — macOS Intel, curățat de date private, licență proprietară necomercială.
+
 **ChatGPT-TrueNAS** este proiectul public de documentație și distribuție. **ChatGPT Drop** este denumirea actuală a aplicației pentru Apple/macOS. Proiect independent, neafiliat oficial OpenAI, Apple, GitHub, Tailscale sau iXsystems.
 
 ## De ce l-am creat
@@ -60,11 +64,11 @@ Cele trei niveluri configurate independent sunt **transferul, citirea și reten�
 
 | Domeniu | Stare confirmată |
 | --- | --- |
-| **Primul release public propus** | **ChatGPT Drop 0.9.0-rc14 V8**, Intel x86_64, semnat Developer ID, numai ca pre-release; verifică fișierul efectiv din [Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases) |
+| **Primul pre-release public** | **[ChatGPT Drop 0.9.0-rc14 V8 — Sanitized](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14)**, macOS Intel x86_64, publicat la 8 octombrie 2026 |
 | **Verificări** | RC14 V8 build/audit DMG și semnături PASS. **Instalarea și E2E RC14, notarizarea Apple și funcționarea cu orice NAS nu sunt confirmate** |
 | **TrueNAS Reader** | Funcțional după corectarea montării în `ChatGPT-Live`; inspecția ZIP-urilor mari direct pe NAS confirmată |
 | **Retenție 7 zile** | **Activă pe TrueNAS de referință:** Cron ID 6; 31 de directoare expirate șterse inițial; Cloud Sync Drive SUCCESS (8 oct.) |
-| **Distribuție installer** | **DMG-ul RC14 V8 original conține configurația privată NAS/SMB/Tailscale și NU se publică.** Primul asset autorizat va fi o **variantă RC14 V8 curățată de date private și resemnată**, cu SHA-256 nou și licență proprietară necomercială. Apariția efectivă se verifică în [Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases) |
+| **Distribuție installer** | **Publicat:** DMG-ul RC14 V8 curățat de date private și resemnat (23.093.113 octeți; SHA-256 `acfa658ee6e9408d18ceb20e6f2ef51a5e807660d5b9ec977b9623a3db39a8c6`). Originalul intern rămâne privat. **Folosire necomercială gratuită**; reutilizarea codului/folosirea comercială cer acord scris |
 | **NAS generic, disc local/extern, Windows, Ubuntu, Apple Silicon** | Direcții de dezvoltare sau implementări nevalidate, nu produse finale |
 
 [Stadiu detaliat](docs/STATUS.md) · [Identitatea buildului](docs/RELEASE.md) · [Roadmap](docs/ROADMAP.md)
