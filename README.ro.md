@@ -64,7 +64,7 @@ Cele trei niveluri configurate independent sunt **transferul, citirea și reten�
 | **Verificări** | RC14 V8 build/audit DMG și semnături PASS. **Instalarea și E2E RC14, notarizarea Apple și funcționarea cu orice NAS nu sunt confirmate** |
 | **TrueNAS Reader** | Funcțional după corectarea montării în `ChatGPT-Live`; inspecția ZIP-urilor mari direct pe NAS confirmată |
 | **Retenție 7 zile** | **Activă pe TrueNAS de referință:** Cron ID 6; 31 de directoare expirate șterse inițial; Cloud Sync Drive SUCCESS (8 oct.) |
-| **Distribuție installer** | Titularul autorizează distribuirea **DMG-ului RC14 V8 original**, cu sursă Python lizibilă, sub **licență proprietară necomercială**. Vizibilitatea sursei nu permite reutilizarea în alte produse. Publicarea este confirmată numai după apariția unui asset real în [Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases) |
+| **Distribuție installer** | **DMG-ul RC14 V8 original conține configurația privată NAS/SMB/Tailscale și NU se publică.** Primul asset autorizat va fi o **variantă RC14 V8 curățată de date private și resemnată**, cu SHA-256 nou și licență proprietară necomercială. Apariția efectivă se verifică în [Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases) |
 | **NAS generic, disc local/extern, Windows, Ubuntu, Apple Silicon** | Direcții de dezvoltare sau implementări nevalidate, nu produse finale |
 
 [Stadiu detaliat](docs/STATUS.md) · [Identitatea buildului](docs/RELEASE.md) · [Roadmap](docs/ROADMAP.md)
