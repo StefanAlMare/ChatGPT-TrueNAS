@@ -56,7 +56,7 @@ locate() {
   consider "$ARCHIVE/$NAME"
   [[ -n "$FOUND" ]] && return 0
   local dir
-  for dir in /Volumes/*; do
+  for dir in /Volumes/*(N); do
     [[ -d "$dir" ]] || continue
     consider "$dir/$REL/$NAME"
     [[ -n "$FOUND" ]] && return 0
