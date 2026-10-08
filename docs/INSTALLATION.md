@@ -7,7 +7,7 @@
 
 ### Before you begin
 
-**RC14 V8 is owner-authorized as the first proprietary non-commercial macOS prerelease candidate.** Check [GitHub Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases) for the actual binary asset; a release note or checksum record alone is not a download. This repository does not contain a public Reader implementation or a general NAS setup wizard.
+**[RC14 V8 SANITIZED is published as a public prerelease](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14).** Download only the **-SANITIZED.dmg** file (23,093,113 bytes, SHA-256 `acfa658ee6e9408d18ceb20e6f2ef51a5e807660d5b9ec977b9623a3db39a8c6`). This is a proprietary **non-commercial** testing preview, not a validated universal NAS setup wizard. Reader/MCP requires separate deployment.
 
 The exact RC14 V8 candidate is Intel x86_64. Intel native build evidence exists; Apple Silicon native/universal compatibility and a general minimum macOS support matrix are not established. macOS 15.7.9 appears in earlier Intel installer tests; this is historical evidence, not a guaranteed RC14 minimum or full support matrix. No notarization acceptance result is established by the signing PASS markers alone.
 
@@ -75,7 +75,7 @@ The planned workflow is to select a managed folder or stable volume identity, ve
 
 ### Disponibilitate și pregătire
 
-**La data publicării nu există installer public.** Ghidul descrie pașii înregistrați și cerințele; nu susține că un utilizator nou poate instala acum exclusiv din acest repository. Nu sunt furnizate surse, imagine Reader sau rețetă de build.
+**[Primul pre-release public RC14 V8 SANITIZED este disponibil](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14).** Descarcă numai fișierul **-SANITIZED.dmg** (23.093.113 octeți, SHA-256 `acfa658ee6e9408d18ceb20e6f2ef51a5e807660d5b9ec977b9623a3db39a8c6`). Acest candidat proprietar este gratuit pentru folosire **necomercială**, dar nu include configurare universală pentru orice NAS sau implementarea Reader.
 
 Candidatul RC14 V8 este Intel x86_64. Compatibilitatea nativă Apple Silicon/universal și matricea completă de versiuni macOS nu sunt stabilite. Testele Intel anterioare menționează macOS 15.7.9, fără a garanta un minim RC14. Semnarea reușită nu dovedește singură acceptarea notarizării.
 
@@ -85,7 +85,7 @@ Pe TrueNAS pregătești un dataset și un share dedicate, capacitate și backup,
 
 Citirea prin ChatGPT se configurează separat: Reader/MCP central sau oglindă Drive care păstrează categoriile. Reader necesită un pachet autorizat separat, acces exclusiv de citire la arborele administrat, identitate de serviciu compatibilă cu ACL-urile și un singur tunel MCP central. Variabila istorică `CHATGPT_INBOX_ROOT` indică rădăcina montată în serviciu, fără a impune structura veche. Endpoint-ul înregistrat este `/mcp`, streamable HTTP, pe portul intern 8000. Aici nu este distribuită o implementare instalabilă a serverului.
 
-### Instalare și utilizare după ce DMG-ul apare efectiv în GitHub Releases
+### Instalare și utilizare din pre-release-ul public RC14 V8
 
 1. Verifici octeții și SHA-256 conform [RELEASE.md](RELEASE.md), apoi deschizi **ChatGPT Drop Installer.app** din DMG.
 2. Alegi **Install** sau **Update** și autorizezi macOS. Aplicația trebuie să ajungă în `/Applications/ChatGPT Drop.app`. Instrucțiunile vechi cu `.command` nu reprezintă interfața RC14.
