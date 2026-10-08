@@ -1,39 +1,43 @@
-# ChatGPT Drop — Free Binary Use and Proprietary Source License
-
-Copyright © 2026 StefanAlMare. All rights reserved except as expressly granted below.
+# ChatGPT Drop — Free Official Binary Use / Proprietary Source Terms
+### Custom rights statement — NOT an open-source license
+Copyright © 2026 StefanAlMare. All rights reserved except for explicit grants below and independently licensed third-party material.
 
 ## English
 
-### 1. Free use of the application
+**1. Free official binary use.** Subject to applicable law, anyone may download, install and run an **official unmodified compiled ChatGPT Drop release**, without an application license fee, on devices they own or are authorized to use, for personal use or ordinary **internal organizational/business use**. Necessary installation/backup copies are allowed. The owner provides no NAS, external accounts, hosted Tailscale service, storage, network connectivity or guaranteed support.
 
-Anyone may download, install, run and use an officially released compiled ChatGPT Drop application free of charge, for personal or business purposes, on devices they own or are authorized to use. Necessary installation and backup copies are permitted. No application license fee is required. This grant does not supply storage, external accounts, connectivity, third-party service subscriptions or guaranteed support.
+**2. Proprietary source remains private.** No right is granted to receive, modify, republish, incorporate, adapt, sublicense or commercially exploit the **proprietary source code**. Source access, derivative work and source redistribution require the rights holder's **prior explicit written permission**.
 
-### 2. Proprietary and private source
+**3. Commercial exploitation requires permission.** Free internal use is not a license to **sell, resell, redistribute, repackage, white-label, integrate into a paid product, bundle as OEM, host or offer the software as a paid service**, nor to sell access to its proprietary functionality. These activities and transfer of source rights require a **separate written agreement** with the rights holder. Linking to an official release is welcome. Permission is not inferred from a public repository, an issue or a silent response.
 
-ChatGPT Drop's proprietary source code is private and is not licensed as open source. Access to, use of, modification of, or redistribution of that proprietary source requires **StefanAlMare's prior written permission**. Free use of the compiled application does not grant those source rights. This public documentation repository does not grant access to private development repositories or authorize publication of their contents. Rights that applicable law makes non-waivable remain unaffected.
+**4. Public GitHub documentation.** Documentation can be viewed and forked through GitHub as the [GitHub Terms of Service](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) permit. Publishing documentation publicly does **not** release any private source code under MIT, Apache, GPL or another open-source license. This custom statement does not override rights GitHub must allow through its platform terms.
 
-### 3. Distribution and documentation
+**5. Legal and third-party rights.** Nothing restricts rights that mandatory law makes non-waivable. Open-source and third-party components included in binaries remain subject to **their own licenses** and must retain all required notices. No third-party license rights are revoked by these terms. Separate external/hosted-service conditions may apply.
 
-The grant in section 1 covers application use and necessary installation/backup copies. It does not grant permission to redistribute modified or unmodified proprietary application packages or proprietary source; obtain written permission for redistribution. Linking to the official repository or an official release is welcome. Public documentation may be read and retained for using the application, subject to GitHub's applicable platform terms. No trademark, endorsement or ownership rights are granted.
+**6. No mark license or endorsement.** OpenAI/ChatGPT, Apple, Tailscale, TrueNAS, GitHub and other marks belong to their respective holders. No permission to use their logos or imply endorsement is granted. Product naming remains subject to independent trademark review.
 
-### 4. Third-party components
+**7. No warranty / availability.** To the extent permitted by law, the product and documentation are supplied “as is”, without warranty or uptime/security assurance. A documented release candidate is **not** a downloadable official release until a real verified asset is published.
 
-Third-party components retain their own copyright and license terms. This license does not restrict permissions granted independently by their respective licenses. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and notices accompanying an authorized distribution.
+**8. Private written permission requests.** Contact the repository owner [@StefanAlMare](https://github.com/StefanAlMare) privately for source, OEM, resale, integration, redistribution and commercial licensing. Public issues are not a secure licensing channel.
 
-### 5. No warranty
-
-The application and documentation are provided “as is”, without warranties, to the extent permitted by applicable law. To that extent, the copyright holder is not liable for loss or damage arising from their use. Pre-release validation limits are stated in the release record. These terms do not remove rights that cannot legally be excluded.
-
-Written-permission requests should be directed to StefanAlMare through the GitHub profile or repository contact route. Do not include proprietary source or private operational data in a public request.
+This is an owner policy and customized draft for public display; jurisdiction-specific enforceability should be reviewed by qualified counsel before public binary distribution.
 
 ## Română
 
-Oricine poate descărca, instala, rula și utiliza gratuit aplicația ChatGPT Drop compilată și distribuită oficial, în scop personal sau profesional, pe dispozitive proprii sau autorizate. Sunt permise copiile necesare instalării și backup-ului. Nu se percepe taxă de licență pentru aplicație. Stocarea, conturile, conectivitatea, serviciile terțe și suportul garantat nu sunt incluse în această permisiune.
+**1. Folosire gratuită a binarului oficial.** Orice persoană sau organizație poate descărca, instala și utiliza **o versiune oficială compilată, nemodificată**, fără taxă pentru aplicație, pe dispozitive proprii/autorizate, în scop personal sau **intern în activitatea profesională a organizației**. Sunt permise copiile necesare instalării și backupului. Conturile externe, NAS-ul, stocarea, rețeaua și eventualele abonamente se plătesc separat.
 
-Codul-sursă proprietar rămâne privat și nu este licențiat open-source. Accesul, folosirea, modificarea sau redistribuirea sa necesită **permisiunea scrisă prealabilă a lui StefanAlMare**. Folosirea gratuită a aplicației compilate nu acordă aceste drepturi asupra surselor și nu autorizează publicarea conținutului repository-urilor private. Drepturile care nu pot fi înlăturate prin lege rămân neafectate.
+**2. Cod-sursă proprietar, privat.** Nu se acordă dreptul de a primi, modifica, republica, adapta, integra, sublicenția ori exploata codul-sursă proprietar. Este necesar **acordul explicit și prealabil în scris** al titularului.
 
-Permisiunea de utilizare nu include redistribuirea pachetelor proprietare, modificate sau nemodificate, ori a surselor. Pentru redistribuire este necesară permisiune scrisă. Sunt binevenite linkurile către repository și release-urile oficiale. Documentația poate fi citită și păstrată pentru utilizarea aplicației, cu respectarea termenilor platformei GitHub. Nu se acordă drepturi asupra mărcilor sau dreptul de a pretinde susținerea titularilor.
+**3. Exploatare comercială distinctă.** Utilizarea internă gratuită nu autorizează **revânzarea, distribuirea pe cont propriu, împachetarea, rebranduirea, licențierea OEM, includerea într-un produs plătit, oferirea ca serviciu contra cost ori vânzarea accesului la funcțiile proprietare**. Pentru acestea se cere **contract/permisiune scrisă separată**. Un repository sau Issue public nu reprezintă acord.
 
-Componentele terțe își păstrează propriile licențe; prezentul document nu restrânge drepturile acordate independent de acestea. Aplicația și documentația sunt furnizate ca atare, fără garanții și fără răspundere pentru pierderi în măsura permisă de lege. Limitele versiunilor preliminare sunt documentate. Drepturile care nu pot fi excluse legal rămân valabile.
+**4. GitHub public nu înseamnă open-source.** Regulile GitHub permit vizualizarea și forking-ul **materialelor publicate efectiv** pe platformă. Ele nu acordă acces la codul păstrat privat și nu transformă documentația într-o licență open-source asupra aplicației.
 
-Permisiunile scrise se solicită lui StefanAlMare prin profilul GitHub sau ruta de contact a repository-ului, fără publicarea surselor ori a datelor private. Versiunea în engleză precizează termenii detaliați; rezumatul românesc urmărește aceeași politică.
+**5. Drepturi legale și componente terțe.** Sunt respectate drepturile obligatorii prevăzute de lege și toate licențele software terțe; prezenta licență nu le anulează. Serviciile externe pot avea termeni suplimentari.
+
+**6. Mărci și garanții.** Mărcile aparțin titularilor lor; nu există parteneriat/endorsement implicit. Aplicația este furnizată, în limitele legii, „ca atare”; descrierea unui candidat nu garantează existența unui installer public.
+
+**7. Solicitări de drepturi.** Contact privat cu [@StefanAlMare](https://github.com/StefanAlMare), prin acord scris, pentru surse, redistribuire, integrare, găzduire ori licențiere comercială.
+
+Textul constituie politica titularului și necesită verificare juridică specifică înainte de comercializare sau distribuție largă.
+
+[Rights and security classification](docs/RIGHTS.md) · [Third-party notices](THIRD_PARTY_NOTICES.md)
