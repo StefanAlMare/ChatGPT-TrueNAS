@@ -23,6 +23,27 @@ Am explorat aplicații existente de tip drop/cloud și transporturi spre ChatGPT
 
 **Tailscale rezolvă transportul Mac → NAS**, nu îi oferă singur lui ChatGPT acces la SMB. **READY/verde** înseamnă doar că întregul lot a fost transferat și verificat, nu că ChatGPT l-a citit.
 
+### Schema fluxului de date
+
+```mermaid
+flowchart TD
+    F["Finder → ChatGPT Drop"] --> S{"SMB direct disponibil?"}
+    S -->|Da| N["TrueNAS / NAS: ChatGPT-Live"]
+    S -->|Nu| T["Tailscale / tsnet privat integrat"]
+    T --> N
+    N --> V["Verificare BYTES + SHA-256 → READY"]
+    N --> R{"Reader/MCP disponibil în Chat sau Work?"}
+    R -->|Da| M["Reader read-only: membri ZIP / fragmente"]
+    R -->|Nu| D["Cloud Sync TrueNAS → oglindă Google Drive"]
+    D --> P["Conector Drive: categorie/dată/batch"]
+    M --> A["Conținut relevant la sursă → ChatGPT"]
+    P --> A
+    N -.-> X["Retenție 168h → ștergere batch"]
+    X -.-> Y["PUSH + SYNC → ștergere propagată în Drive"]
+```
+
+Cele trei niveluri configurate independent sunt **transferul, citirea și retenția**. Schemele detaliate includ și tratarea erorilor, reluarea și evitarea descărcării integrale a arhivelor.
+
 [**Vezi schemele complete, cu alternative →**](docs/ROUTES.md)
 
 ## Cum se folosește
