@@ -73,7 +73,7 @@ The three independently configured layers are **upload, content reading, and ret
 
 **Official binaries may be used free of charge for personal, educational and other non-commercial purposes. Commercial/business use requires prior written approval**, as do repackaging, resale, redistribution, paid hosting, white-label/OEM integration and use of proprietary code in other products. The private development repository remains private. Some owner-authored Python files are readable inside this RC14 DMG: viewing them does **not** grant a source-reuse license. Third-party licenses and mandatory statutory rights remain intact.
 
-Publishing on GitHub **does not make the product open-source**. GitHub users can view/fork public materials under GitHub's Terms. The owner expressly allows the selected RC14 V8 DMG to be distributed with visible runtime source, **without authorizing derivative code use**. Private repository content, credentials, signing keys and personal logs are not part of the publication.
+Publishing on GitHub **does not make the product open-source**. GitHub users can view/fork public materials under GitHub's Terms. The owner authorizes only the **privacy-sanitized, newly signed RC14 V8 derivative** for public distribution; its readable runtime source does **not** grant derivative code rights. Private repository content, credentials, signing keys and personal logs are not part of the publication.
 
 [Binding terms and permissions](LICENSE.md) · [Publishing/acceptance levels](docs/RIGHTS.md) · [Security](SECURITY.md) · [Third-party notices](THIRD_PARTY_NOTICES.md)
 
