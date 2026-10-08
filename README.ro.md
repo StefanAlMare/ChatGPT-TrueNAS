@@ -73,7 +73,7 @@ Cele trei niveluri configurate independent sunt **transferul, citirea și reten�
 
 **Oricine poate utiliza gratuit binarul oficial în scop personal, educațional ori alt scop necomercial. Utilizarea comercială/profesională necesită acord scris în prealabil.** Aceeași regulă se aplică redistribuirii, revânzării, găzduirii plătite, integrării OEM, derivatelor și reutilizării codului proprietar în alte produse. Repository-ul de dezvoltare rămâne privat; fișierele Python lizibile în DMG nu primesc licență de reutilizare. Licențele terțe și drepturile legale obligatorii sunt respectate.
 
-Publicarea pe GitHub **nu transformă proiectul în open-source**. Materialele publice pot fi vizualizate și *forked* în condițiile GitHub. Titularul permite expres distribuirea acestui DMG RC14 V8, inclusiv cu fișiere Python lizibile, **fără a autoriza reutilizarea lor în alte produse**. Nu publicăm chei, credențiale, jurnale private ori repository-ul intern.
+Publicarea pe GitHub **nu transformă proiectul în open-source**. Materialele publice pot fi vizualizate și *forked* în condițiile GitHub. Titularul permite numai distribuirea **variantei RC14 V8 curățate de date private și resemnate**, chiar dacă unele fișiere Python rămân lizibile, **fără a autoriza reutilizarea codului în alte produse**. Nu publicăm chei, credențiale, jurnale private ori repository-ul intern.
 
 [Licență și permisiuni](LICENSE.md) · [Niveluri de securitate/acceptare](docs/RIGHTS.md) · [Politică securitate](SECURITY.md) · [Componente terțe](THIRD_PARTY_NOTICES.md)
 
