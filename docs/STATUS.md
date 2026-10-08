@@ -27,7 +27,7 @@ Acceptarea istorică privește mediul testat. Un build sau audit static PASS nu 
 | SMB StorageBackend abstraction | In RC14 package/source parity; only SMB backend exists / Inclusă RC14; există numai SMB |
 | Generic NAS setup wizard / broad compatibility | Planned; current internal package has fixed provisioning assumptions / Planificat; pachetul actual are presupuneri fixe |
 | Local folder and external-volume destination | **Not implemented** / **Neimplementate** |
-| 168-hour TrueNAS retention | Source ready; native deletion and mirror propagation unvalidated / Sursă pregătită; ștergerea și propagarea nevalidate |
+| 168-hour TrueNAS retention | **Reference TrueNAS PASS (8 Oct 2026):** the cleaner and minute-level Cron were installed; the initial run deleted 31 expired batch directories; the configured PUSH+SYNC Google Drive job completed SUCCESS, and representative expired source files were no longer listed in Drive. Additional historical empty Drive folders may remain; future autonomous expiries still need observation. / **PASS pe TrueNAS de referință (8 oct. 2026):** script și Cron instalate; prima execuție a șters 31 de directoare de batch; Cloud Sync PUSH+SYNC s-a încheiat cu SUCCESS; fișierele expirate testate nu mai apăreau în Drive. Pot rămâne directoare istorice goale; execuțiile automate viitoare se vor monitoriza. |
 | Configurable retention per storage profile | Roadmap / Planificat |
 | Windows / Ubuntu | Packaging preparation only; native release validation pending / Pregătire pachete; validare nativă în așteptare |
 | Apple Silicon native / universal macOS | Not established for this x86_64 candidate / Nestabilit pentru candidatul x86_64 |
