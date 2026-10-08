@@ -60,20 +60,20 @@ Cele trei niveluri configurate independent sunt **transferul, citirea și reten�
 
 | Domeniu | Stare confirmată |
 | --- | --- |
-| **Versiune internă acceptată** | macOS **0.9.0-rc13**, inclusiv test cu transfer privat din afara LAN |
-| **Cel mai nou candidat** | **ChatGPT Drop 0.9.0-rc14 V8**, Intel x86_64: build, semnare Developer ID și audit DMG PASS; **instalarea/E2E RC14 și notarizarea neconfirmate** |
+| **Primul release public propus** | **ChatGPT Drop 0.9.0-rc14 V8**, Intel x86_64, semnat Developer ID, numai ca pre-release; verifică fișierul efectiv din [Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases) |
+| **Verificări** | RC14 V8 build/audit DMG și semnături PASS. **Instalarea și E2E RC14, notarizarea Apple și funcționarea cu orice NAS nu sunt confirmate** |
 | **TrueNAS Reader** | Funcțional după corectarea montării în `ChatGPT-Live`; inspecția ZIP-urilor mari direct pe NAS confirmată |
 | **Retenție 7 zile** | **Activă pe TrueNAS de referință:** Cron ID 6; 31 de directoare expirate șterse inițial; Cloud Sync Drive SUCCESS (8 oct.) |
-| **Installer public / Releases** | **Încă nu există.** DMG-ul RC14 V8 conține `chatgpt_drop.py` în clar și nu poate fi publicat neschimbat dacă sursa trebuie protejată |
+| **Distribuție installer** | Titularul autorizează distribuirea **DMG-ului RC14 V8 original**, cu sursă Python lizibilă, sub **licență proprietară necomercială**. Vizibilitatea sursei nu permite reutilizarea în alte produse. Publicarea este confirmată numai după apariția unui asset real în [Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases) |
 | **NAS generic, disc local/extern, Windows, Ubuntu, Apple Silicon** | Direcții de dezvoltare sau implementări nevalidate, nu produse finale |
 
 [Stadiu detaliat](docs/STATUS.md) · [Identitatea buildului](docs/RELEASE.md) · [Roadmap](docs/ROADMAP.md)
 
 ## Gratuit de utilizat ≠ open-source
 
-Intenția este ca **oricine să poată folosi gratuit aplicația oficială compilată**, inclusiv intern într-o organizație. **Codul-sursă rămâne privat și proprietar.** Accesul la surse, modificările, proiectele derivate, redistribuirea, revânzarea, găzduirea contra cost, rebranduirea și exploatarea comercială necesită **acordul scris al titularului**. Se respectă drepturile legale obligatorii și licențele componentelor terțe.
+**Oricine poate utiliza gratuit binarul oficial în scop personal, educațional ori alt scop necomercial. Utilizarea comercială/profesională necesită acord scris în prealabil.** Aceeași regulă se aplică redistribuirii, revânzării, găzduirii plătite, integrării OEM, derivatelor și reutilizării codului proprietar în alte produse. Repository-ul de dezvoltare rămâne privat; fișierele Python lizibile în DMG nu primesc licență de reutilizare. Licențele terțe și drepturile legale obligatorii sunt respectate.
 
-Un repository public **nu devine automat open-source**, dar regulile GitHub permit vizualizarea și *fork*-ul conținutului pus public. De aceea nu publicăm aici sursele, secretele, jurnalele private sau DMG-ul care conține Python proprietar.
+Publicarea pe GitHub **nu transformă proiectul în open-source**. Materialele publice pot fi vizualizate și *forked* în condițiile GitHub. Titularul permite expres distribuirea acestui DMG RC14 V8, inclusiv cu fișiere Python lizibile, **fără a autoriza reutilizarea lor în alte produse**. Nu publicăm chei, credențiale, jurnale private ori repository-ul intern.
 
 [Licență și permisiuni](LICENSE.md) · [Niveluri de securitate/acceptare](docs/RIGHTS.md) · [Politică securitate](SECURITY.md) · [Componente terțe](THIRD_PARTY_NOTICES.md)
 
