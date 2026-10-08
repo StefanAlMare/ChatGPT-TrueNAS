@@ -4,6 +4,14 @@ This is an edited public technical chronology, grounded in the private developme
 
 Acesta este un istoric tehnic public redactat pe baza înregistrărilor private. Păstrează rezultatele și limitele, fără surse, loguri operaționale private, nume de fișiere personale, credențiale sau istoricul Git privat. Pregătirea sursei, build-ul, instalarea și acceptarea completă sunt etape distincte.
 
+## 3–4 September 2026 · Foundation / Fundament## Origin and decision chain / De la idee la produs
+
+**EN:** Before the numbered RCs, the owner wanted easy sharing of large diagnostics with ChatGPT **without repeatedly consuming the ChatGPT file-upload/storage allowance**. Existing cloud/drop-style integrations and public transport experiments showed that **moving bytes** and **letting a particular Chat/Work session read those bytes** are not the same. The exact early “Drop…” service name is not reliably documented, so this history does not invent a verified Dropbox test. The product separated (1) Mac→NAS transfer (SMB, then embedded private Tailscale when SMB was unreachable), (2) NAS→AI reading (read-only MCP Reader, then Drive mirror fallback when the active Chat/Project/Work lacked Reader tools), and (3) independent 168-hour cleanup. Content read for analysis still consumes tokens and connector resources; the original bytes still occupy NAS/Drive capacity.
+
+**RO:** Ideea inițială: predarea simplă a arhivelor/logurilor mari către ChatGPT **fără încărcări integrale repetate care consumă cotele de upload/stocare**. Experimentele cu soluții de tip „Drop…”, cu transporturi publice și cu mediile Chat/Work au arătat că **transferul** nu garantează **citirea în conversație**. Numele exact al primei aplicații terțe nu este confirmat în istoricul salvat. Soluția a separat (1) transferul Mac→NAS prin SMB/Tailscale privat, (2) citirea NAS→ChatGPT prin Reader/MCP sau Google Drive și (3) ștergerea batch-urilor la 168h. Analiza consumă în continuare token-uri; fișierele ocupă spațiu pe NAS/Drive.
+
+[Why / De ce](docs/ORIGIN.md) · [Route diagrams / Scheme](docs/ROUTES.md) · [Handover / Predare](docs/HANDOVER.md)
+
 ## 3–4 September 2026 · Foundation / Fundament
 
 **EN:** The first project and cross-platform batch agent were created on 3 September. The prototype watched a Desktop drop folder, classified files, uploaded through SMB, verified destination size/SHA and produced a clipboard handoff. Transaction hardening, OS credential storage, path confinement and symlink rejection in the read-only TrueNAS Reader followed. Early macOS fixes addressed virtual-environment interpreter selection and SMB missing-file handling; a real multi-file batch established the first accepted core.
