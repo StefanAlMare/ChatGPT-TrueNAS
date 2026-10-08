@@ -26,17 +26,13 @@
   "publication": {
     "release_published": false,
     "public_asset_available": false,
-    "status": "PENDING_PUBLIC_GITHUB_RELEASE_ASSET_UPLOAD",
-    "proposed_tag": "v0.9.0-rc14",
-    "required_release_type": "prerelease",
-    "owner_authorized_publication_of_exact_source_bearing_dmg": true,
-    "authorization_scope_sha256": "125802a96df9b169960ed09f65cdb893b22f85f1875d285ea67b942a9b3c6f34",
-    "license": "Proprietary Non-Commercial Preview License",
-    "commercial_business_use_requires_prior_written_permission": true,
-    "proprietary_source_reuse_in_other_products_requires_prior_written_permission": true,
-    "readable_proprietary_python_runtime_is_intentionally_disclosed": true,
-    "general_nas_configurability_not_validated": true,
-    "github_release_notes_source": "releases/v0.9.0-rc14.md",
-    "statement": "Owner permits publication of this exact SHA-matched source-bearing RC14 DMG as a non-commercial prerelease; read-only source visibility grants no permission for source reuse. Actual public download must be independently verified after asset upload."
+    "status": "BLOCKED_PENDING_SANITIZED_REBUILT_RESIGNED_RC14",
+    "release_target": "v0.9.0-rc14",
+    "authorized_public_artifact": "privacy-sanitized RC14 V8 derivative only, distinct SHA/signature from private original",
+    "original_reference_dmg_must_never_be_uploaded": true,
+    "reason": "Original RC14 V8 DMG embeds private NAS, SMB username and Tailscale connection defaults. Sanitization, fail-closed defaults, code signature regeneration and output security audit required before public prerelease.",
+    "noncommercial_proprietary_license": true,
+    "commercial_and_source_reuse_require_owner_permission": true,
+    "artifact_identity_to_be_filled_after_remote_download_verification": true
   }
 }
