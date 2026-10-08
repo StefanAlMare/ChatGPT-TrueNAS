@@ -1,7 +1,7 @@
 # Feature and validation status / Stadiul funcționalităților
 
 
-**Read first / Citește întâi:** [purpose and origin](ORIGIN.md) · [three route diagrams](ROUTES.md) · [setup](SETUP.md) · [handover](HANDOVER.md) · [proprietary rights and admission gates](RIGHTS.md). Note: RC14 V8 is owner-authorized for a **proprietary non-commercial prerelease** even though its DMG contains readable proprietary Python source; this does **not** license reuse or establish turnkey generic NAS support.
+**Read first / Citește întâi:** [purpose and origin](ORIGIN.md) · [three route diagrams](ROUTES.md) · [setup](SETUP.md) · [handover](HANDOVER.md) · [proprietary rights and admission gates](RIGHTS.md). Note: **[RC14 V8 sanitized prerelease is now public](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14)** under a proprietary non-commercial license. The original DMG with private infrastructure values was **not** published. The current binary is **not** a verified generic NAS installer.
 
 Reviewed / Revizuit: **2026-10-08**.
 
@@ -37,7 +37,7 @@ Acceptarea istorică privește mediul testat. Un build sau audit static PASS nu 
 | Universal three-platform distribution | Not released; gated on native acceptance on each platform / Nelansată; necesită acceptarea fiecărei platforme |
 | RC14 graphical Update/state preservation/app launch | **Not yet validated** / **Încă nevalidate** |
 | RC14 V8 DMG bytes/SHA, integrity and signatures | Fresh checks PASS on 8 October, without install / PASS reverificat la 8 octombrie, fără instalare |
-| RC14 V8 public binary policy | **Only a sanitized and newly signed RC14 V8 derivative is authorized for public prerelease**; the original embeds private NAS/SMB/Tailscale data and is blocked. Readable Python in the sanitized package does not authorize code reuse / **Doar varianta curățată și resemnată poate fi publicată**; originalul conține date private, iar codul lizibil nu poate fi reutilizat fără permisiune |
+| RC14 V8 public binary | **PUBLISHED as sanitized prerelease, 8 Oct 2026:** 23,093,113 bytes, SHA-256 `acfa658ee6e9408d18ceb20e6f2ef51a5e807660d5b9ec977b9623a3db39a8c6`; GitHub API digest and owner download check PASS. Private original never uploaded. / **PUBLICAT pre-release curățat**, hash verificat; originalul privat nu a fost publicat. Proprietary-source reuse/commercial use still requires written approval |
 | Notarization acceptance | Not established by available evidence / Nedovedită de informațiile disponibile |
 
 ## RC14 acceptance still required / Validări RC14 rămase
