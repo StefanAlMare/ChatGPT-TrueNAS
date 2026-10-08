@@ -4,7 +4,26 @@
 
 **Owner decision on 8 October 2026:** the first public macOS release must be a **sanitized and re-signed RC14 V8 derivative**, offered as a proprietary non-commercial prerelease. The original DMG contains private infrastructure defaults and **must not be published**, irrespective of matching SHA-256. Readable Python runtime may be included under restricted usage terms. Being able to read runtime source within the DMG does **not** license its redistribution, alteration, resale or incorporation into other products.
 
-## Exact artifact / Identitatea artifactului
+## Published public artifact / Artefactul publicat — 8 October 2026
+
+**[Download the first RC14 V8 sanitized prerelease](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14)** · **[Descarcă primul pre-release RC14 V8 curățat](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14)**
+
+| Field / Câmp | Verified value / Valoare verificată |
+| --- | --- |
+| GitHub tag | `v0.9.0-rc14` |
+| Release status | **PUBLIC, PRERELEASE, NOT STABLE** / Publicat ca pre-release |
+| File | `ChatGPT-Drop-Installer-macOS-x86_64-0.9.0-rc14-SANITIZED.dmg` |
+| Size / Dimensiune | **23,093,113 bytes** |
+| SHA-256 | `acfa658ee6e9408d18ceb20e6f2ef51a5e807660d5b9ec977b9623a3db39a8c6` |
+| Evidence / Dovezi | macOS sanitation and signing audit PASS in owner execution log; live GitHub asset size and digest match; owner independently downloaded the public asset and verified its SHA-256 |
+| Terms / Drepturi | Proprietary **non-commercial** free-use preview; commercial use, resale and proprietary-code reuse require prior written permission |
+| Still unvalidated / Nevalidate | RC14 full Install/Update E2E, Apple notarization, generic NAS self-service configuration |
+
+The original reference DMG described below contains private NAS/SMB/Tailscale defaults. **It remains private and was not uploaded.** The public sanitized derivative has a distinct SHA-256 and signature.
+
+Originalul intern descris mai jos conține setări private NAS/SMB/Tailscale. **Nu a fost publicat.** Varianta curățată are identitate și semnătură distincte.
+
+## Private original — historical reference ONLY / Original privat — numai istoric
 
 | Field | Recorded value |
 | --- | --- |
@@ -22,11 +41,11 @@
 | Generic NAS/end-user onboarding | **NOT VERIFIED; reference-specific assumptions remain** |
 | Prior accepted internal macOS baseline | RC13 (history/rollback reference, **not another public release**) |
 
-**Distribution check:** the original artifact identity below is **private reference evidence only**. A sanitized release must carry a **different SHA-256**. An actual download exists **only when [GitHub Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases) lists a real asset with the exact filename and matching checksum**. Documentation or a tag alone must never be called a completed software release.
+**Distribution check:** the historical original identified above is **not** the download. The actual public release is **[v0.9.0-rc14](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14)**, containing the **SANITIZED** filename and the public SHA-256 listed at the top. The GitHub API and a redownload verification confirmed the asset.
 
 ## Why this is proprietary despite source being readable / De ce rămâne proprietar
 
-The DMG includes a readable owner-authored Python runtime file, such as `ChatGPT Drop Installer.app/Contents/Resources/runtime/chatgpt_drop.py`. The owner knowingly authorizes disclosure **inside this specific installer**. It remains subject to the [non-commercial proprietary license](../LICENSE.md): non-commercial personal/educational/research use may be free; **commercial use, repackaging, redistribution, derivative works, OEM, paid hosting and code integration require prior written permission**. Independent third-party open-source permissions are preserved.
+The **public sanitized DMG** retains readable owner-authored Python runtime files, such as `ChatGPT Drop Installer.app/Contents/Resources/runtime/chatgpt_drop.py`. The owner authorizes this limited disclosure **only in the sanitized release**, not in the original private-configured DMG. It remains subject to the [non-commercial proprietary license](../LICENSE.md): non-commercial personal/educational/research use may be free; **commercial use, repackaging, redistribution, derivative works, OEM, paid hosting and code integration require prior written permission**. Independent third-party open-source permissions are preserved.
 
 **Română:** DMG-ul original conține configurații private și NU se publică. Titularul autorizează numai distribuirea unei **variante curățate și resemnate**, cu SHA-256 nou, nu reutilizarea codului în alte produse. Utilizarea comercială cere acord scris; licențele terțe se respectă.
 
