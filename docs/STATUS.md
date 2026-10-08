@@ -1,7 +1,7 @@
 # Feature and validation status / Stadiul funcționalităților
 
 
-**Read first / Citește întâi:** [purpose and origin](ORIGIN.md) · [three route diagrams](ROUTES.md) · [setup](SETUP.md) · [handover](HANDOVER.md) · [proprietary rights and admission gates](RIGHTS.md). Note: public deployment is not a supported turnkey install and an existing DMG with embedded proprietary Python source is not approved for public release.
+**Read first / Citește întâi:** [purpose and origin](ORIGIN.md) · [three route diagrams](ROUTES.md) · [setup](SETUP.md) · [handover](HANDOVER.md) · [proprietary rights and admission gates](RIGHTS.md). Note: RC14 V8 is owner-authorized for a **proprietary non-commercial prerelease** even though its DMG contains readable proprietary Python source; this does **not** license reuse or establish turnkey generic NAS support.
 
 Reviewed / Revizuit: **2026-10-08**.
 
@@ -37,7 +37,7 @@ Acceptarea istorică privește mediul testat. Un build sau audit static PASS nu 
 | Universal three-platform distribution | Not released; gated on native acceptance on each platform / Nelansată; necesită acceptarea fiecărei platforme |
 | RC14 graphical Update/state preservation/app launch | **Not yet validated** / **Încă nevalidate** |
 | RC14 V8 DMG bytes/SHA, integrity and signatures | Fresh checks PASS on 8 October, without install / PASS reverificat la 8 octombrie, fără instalare |
-| Source-free public binary packaging | **Fails current publication boundary: proprietary Python source is bundled** / **Nu respectă cerința actuală: sursă Python proprietară inclusă** |
+| RC14 V8 public binary policy | **Owner-authorized exception for this exact DMG:** bundled Python source can be viewed but cannot be reused in other products without permission; non-commercial preview use only / **Excepție autorizată:** sursa Python vizibilă nu permite reutilizarea sau exploatarea comercială fără acord scris |
 | Notarization acceptance | Not established by available evidence / Nedovedită de informațiile disponibile |
 
 ## RC14 acceptance still required / Validări RC14 rămase
