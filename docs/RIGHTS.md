@@ -18,7 +18,7 @@
 
 ## 2. Bundled source is visible, but not open-source
 
-The owner has expressly approved publishing the **unchanged RC14 V8 DMG** as a proprietary non-commercial preview, while forbidding unauthorized code reuse and commercial use. Its installer includes **readable owner-authored Python runtime code**. Publishing the DMG makes those bytes **publicly accessible**; calling that code “confidential after release” or promising technical prevention of copying would be false.
+The owner permits **only a sanitized, newly signed derivative of RC14 V8** as the first proprietary non-commercial preview. The **original DMG includes private NAS/SMB/Tailscale defaults and must not be published**. Unauthorized code reuse and commercial use remain prohibited. Its installer includes **readable owner-authored Python runtime code**. Publishing the DMG makes those bytes **publicly accessible**; calling that code “confidential after release” or promising technical prevention of copying would be false.
 
 Recipients may inspect the included files and execute the runtime as required for licensed non-commercial use. They receive **no general grant to republish, modify, sublicense, reuse in other products or resell** the owner's proprietary code. The private source/development repository itself is **not** copied into this public repository. Mandatory law and third-party licenses take precedence where applicable.
 
@@ -41,7 +41,7 @@ GitHub's terms allow public content to be viewed and forked **through the GitHub
 
 **RC14 prerelease packaging acceptance:** the exact DMG identified by SHA-256 passes the recorded DMG/signature checks. The **release is explicitly a test preview**: independent final RC14 graphical Update/E2E, Apple notarization and deployment to other NAS devices **are not confirmed**. No generic NAS setup wizard is available; a reference-configured package should not be advertised as universally plug-and-play.
 
-**Owner override, 8 October 2026:** the earlier blanket “do not publish if proprietary Python source is readable” rule is superseded **only for the exact owner-approved RC14 V8 artifact**. The new terms permit public distribution of that artifact without licensing its proprietary source for derivative products. **This does not waive the prohibition on secrets, unauthorized user data, third-party license violations or false claims of notarization/E2E validation.**
+**Owner clarification, 8 October 2026:** source-bearing Python can be distributed under the non-commercial proprietary license only after removing **every personal NAS, SMB and Tailscale default** from the release and re-signing the rebuilt package. The original SHA-approved internal RC14 DMG is **not** approved for public distribution. **No passwords, private infrastructure identifiers, personal data or misleading notarization/E2E claims may be published.**
 
 ## 5. Architecture and operational protections
 
