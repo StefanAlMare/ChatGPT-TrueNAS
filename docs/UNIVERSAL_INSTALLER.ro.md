@@ -1,8 +1,10 @@
 # Asistent universal de instalare — ghidul utilizatorului (proiectare v0.1)
 
+**RC15.1 scope / Domeniu:** notarized startup/Keychain repair, not implementation of this universal-installer design. Twenty isolated repair cases passed; the separate [universal acceptance matrix](ACCEPTANCE_INSTALLER.md) remains a specification. [Current evidence / Dovezi curente](STATUS.md) · [Python requirements / Cerințe Python](COMPATIBILITY.md).
+
 [English](UNIVERSAL_INSTALLER.md) · [Stocare și servere](HOSTING_AND_STORAGE.md) · [Securitate detaliată](SECURITY_INSTALLER.md) · [Contract tehnic](WIZARD_CONTRACT.md) · [Teste și plan](ACCEPTANCE_INSTALLER.md)
 
-> **Stare la 8 octombrie 2026:** acesta este **fluxul pe care îl construim**, NU un installer universal disponibil deja. Release-ul public [RC14 V8 SANITIZED](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14) este un pre-release Intel macOS, încă fără asistent general de configurare și fără acceptare E2E finală. Reader-ul nu este distribuit încă drept pachet instalabil pentru public.
+> **Stare la 10 octombrie 2026:** acesta este **fluxul pe care îl construim**, NU un installer universal disponibil deja. Release-ul public [RC15.1 NOTARIZED PREVIEW](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc15.1) este un pre-release Intel macOS, încă fără asistent general de configurare și fără acceptare E2E finală. Reader-ul nu este distribuit încă drept pachet instalabil pentru public.
 
 ## Ce vrem să obținem
 
@@ -71,9 +73,9 @@ Utilizatorul alege **o singură destinație activă**:
 | TrueNAS SCALE | Dataset/folder, cont SMB, share, Reader ca aplicație izolată, opțional Cloud Sync | Referință funcțională, dar wizard general de construit |
 | NAS obișnuit cu SMB (Synology, QNAP, ASUSTOR etc.) | Share, cont limitat, Reader pe NAS dacă există containere sau pe altă gazdă | De implementat și testat pe modele |
 | Server Linux / mini-PC / alt calculator | Folder administrat + SMB sau backend local + Reader containerizat | De implementat și testat |
-| Folder de pe discul intern | Folder dedicat + Reader pe o gazdă accesibilă sau oglindă cloud | Backend local încă neimplementat în RC14 |
+| Folder de pe discul intern | Folder dedicat + Reader pe o gazdă accesibilă sau oglindă cloud | Backend local încă neimplementat în RC15.1 |
 | SSD/HDD extern / USB | Identitatea volumului, folder, jurnal/retention rezilient la deconectare | Backend extern încă neimplementat |
-| Google Drive / Nextcloud / WebDAV / S3 | Profil cloud cu OAuth/token limitat și citire compatibilă | Direcție viitoare; nu pretindem că RC14 poate scrie direct acolo |
+| Google Drive / Nextcloud / WebDAV / S3 | Profil cloud cu OAuth/token limitat și citire compatibilă | Direcție viitoare; nu pretindem că RC15.1 poate scrie direct acolo |
 
 **Verificare:** o destinație are nume unic, cale explicită, spațiu disponibil și identitate stabilă. Instalarea într-un volum existent nu modifică alte foldere.
 

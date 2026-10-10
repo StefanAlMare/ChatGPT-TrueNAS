@@ -1,8 +1,10 @@
 # Gazda Reader-ului și stocarea — ghid de instalare pe tipuri de hardware
 
+**RC15.1 scope / Domeniu:** notarized startup/Keychain repair, not implementation of this universal-installer design. Twenty isolated repair cases passed; the separate [universal acceptance matrix](ACCEPTANCE_INSTALLER.md) remains a specification. [Current evidence / Dovezi curente](STATUS.md) · [Python requirements / Cerințe Python](COMPATIBILITY.md).
+
 [Ghidul utilizatorului](UNIVERSAL_INSTALLER.ro.md) · [Securitate](SECURITY_INSTALLER.md) · [Contractul wizardului](WIZARD_CONTRACT.md) · [Teste](ACCEPTANCE_INSTALLER.md)
 
-**Stadiu:** proiect tehnic pentru installer universal. Singurul mediu verificat complet pentru retenție și Reader în istoricul curent este **TrueNAS-ul de referință**; nu prezentăm Synology/QNAP/Unraid/Windows/Linux/local/cloud ca deja certificate. Pachetul public RC14 nu distribuie imaginea Reader-ului și nu include wizard universal.
+**Stadiu:** proiect tehnic pentru installer universal. Singurul mediu verificat complet pentru retenție și Reader în istoricul curent este **TrueNAS-ul de referință**; nu prezentăm Synology/QNAP/Unraid/Windows/Linux/local/cloud ca deja certificate. Pachetul public RC15.1 nu distribuie imaginea Reader-ului și nu include wizard universal.
 
 ## 1. Înțelegerea celor trei alegeri
 
@@ -59,7 +61,7 @@ flowchart TD
 
 În wizard introduci **host SMB**, **share**, **subfolder administrat**, **numele contului**; parola se păstrează doar în **Keychain**, prin interfața securizată a macOS. Testul creează un fișier unic în spațiul de probă, face operații de scriere/citire/rename și verificare SHA256, apoi curăță **numai proba**.
 
-**Stadiu:** RC14 V8 SANITIZED este publicat pentru test, dar încă nu are wizard generic validat. În această etapă definim interfața care va înlocui presupunerile fixe ale versiunilor interne.
+**Stadiu:** RC15.1 NOTARIZED PREVIEW este publicat pentru test, dar încă nu are wizard generic validat. În această etapă definim interfața care va înlocui presupunerile fixe ale versiunilor interne.
 
 ### Pasul 5 — Reader ca aplicație izolată
 
@@ -141,7 +143,7 @@ Pe server instalezi un executor separat, care șterge **numai batchuri cu ID/man
 
 ## 5. Disc intern, SSD extern și USB — o destinație permanentă doar cât e disponibilă
 
-**Folder intern:** selectare prin dialog de fișiere și permisiune acordată numai folderului ales; creare de folder administrat; verificare atomic rename și hash; Reader local accesibil prin tunel ori copie cloud separată. **RC14 nu implementează încă backendul.**
+**Folder intern:** selectare prin dialog de fișiere și permisiune acordată numai folderului ales; creare de folder administrat; verificare atomic rename și hash; Reader local accesibil prin tunel ori copie cloud separată. **RC15.1 nu implementează încă backendul.**
 
 **SSD/USB extern:** identificare stabilă a volumului și cale revalidată la fiecare montare, păstrarea jurnalului de batch pe discul intern; dispariția discului trece în **PAUSED/RETRY**, fără crearea automată de directoare într-o cale care acum indică alt volum. După reatașare verificăm UUID/volum și identitatea datelor înainte de reluare. Executorul de retenție amână ștergerea până revine dispozitivul.
 

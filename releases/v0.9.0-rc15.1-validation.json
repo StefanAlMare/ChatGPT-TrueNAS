@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-10",
+  "version": "0.9.0-rc15.1",
+  "build": 16,
+  "artifact": {
+    "filename": "ChatGPT-Drop-Installer-macOS-x86_64-0.9.0-rc15.1-UPDATE-KEYCHAIN-FIX-PREVIEW-NOTARIZED.dmg",
+    "bytes": 23051823,
+    "sha256": "ddd457567e63320621f61475559e2434d0434918c250d0c50a410dfb3e948074"
+  },
+  "native_environment": {
+    "architecture": "x86_64",
+    "macos": "26.7.1",
+    "python": "MacPorts CPython 3.14.8"
+  },
+  "tests": {
+    "native_isolated_startup": {
+      "cases": 10,
+      "result": "PASS"
+    },
+    "isolated_lifecycle": {
+      "cases": 8,
+      "result": "PASS"
+    },
+    "stale_session_evidence": {
+      "cases": 2,
+      "result": "PASS"
+    },
+    "swift_identity_and_installer_outcome": "PASS",
+    "sanitization_audit": "PASS",
+    "transfer_ast_parity_except_startup_callback": "PASS",
+    "protected_static_files": "UNCHANGED"
+  },
+  "notarization": {
+    "payload": {
+      "id": "2d1f897f-30cf-4a77-a3a9-67ab9077b203",
+      "status": "Accepted"
+    },
+    "installer": {
+      "id": "dad45cc6-74b9-47e0-a769-9ca9557e3037",
+      "status": "Accepted"
+    },
+    "dmg": {
+      "id": "a66ee887-7587-4dd3-b2cf-a1170ff07817",
+      "status": "Accepted"
+    },
+    "team_id": "YWVVK7QZ6X",
+    "stapling_all_three": "PASS",
+    "strict_signatures_all_three": "PASS",
+    "gatekeeper_all_three": "accepted: Notarized Developer ID",
+    "dmg_integrity": "PASS"
+  },
+  "limitations": [
+    "Fixture Keychain backend; actual SMB password not used",
+    "Administrative and process-control boundaries isolated; old-app relaunch mocked in lifecycle tests",
+    "No real installed administrative Update, reboot or candidate transfer E2E",
+    "Native python.org/Homebrew, macOS 15 and other computers not tested",
+    "External standard CPython 3.14 required; no standalone interpreter bundled",
+    "Intel-only preview; no universal NAS wizard or local/external destination backend"
+  ],
+  "publication_scope": "Sanitized binary, public documentation, license, notices, checksum and this sanitized summary; no private development sources or raw logs"
+}

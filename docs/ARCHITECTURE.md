@@ -19,7 +19,7 @@
 | Drive mirror | Optional category-preserving read fallback | Synchronization delay and connector permissions apply |
 | Retention executor | Expire eligible stored batches | **Reference deployment PASS 8 Oct 2026:** 31 expired batch directories removed by 168-hour cleaner, configured Drive PUSH+SYNC completed SUCCESS; monitor future automated runs |
 
-The private runtime implementation is not included in this repository. A native application shell does not mean every internal component is compiled machine code: the recorded RC11–RC14 runtime uses Python in a virtual environment. Any future public installer must be reviewed for the owner's source-distribution restrictions as well as secrets before publication.
+The private runtime implementation is not included in this repository. A native application shell does not mean every internal component is compiled machine code: the recorded RC11–RC15.1 runtime uses Python in a virtual environment. Any future public installer must be reviewed for the owner's source-distribution restrictions as well as secrets before publication.
 
 ```mermaid
 flowchart LR
@@ -68,3 +68,9 @@ READY și clipboard-ul apar numai după verificarea întregului lot. Garanția p
 **Stocarea, citirea și retenția sunt independente.** Transferul SMB reușit nu dovedește accesul ChatGPT la Reader. Citirea reușită nu dovedește activarea ștergerii automate. Tailscale integrat deservește transferul; nu îi oferă automat lui ChatGPT din cloud acces la un share SMB privat.
 
 Abstracția StorageBackend din RC14 împachetează implementarea SMB existentă. Folderul local și discul extern sunt profiluri planificate, fără adaptoare implementate. Și stocarea locală ar necesita un Reader sau un conector accesibil pentru citirea din ChatGPT.
+
+## RC15.1 startup boundary / Limita pornirii
+
+GUI → shell helper → external-Python venv → core launcher → existing transaction engine. The helper executes Python in place, preserving PID continuity. GUI, installer and launcher resolve the same configured SMB username and Keychain service. Session-tagged GUI/engine evidence, current process identities and fresh challenge responses establish readiness; transfer operations are not used as a startup probe. The only engine change is an optional startup-health callback after initialization. Finder, SMB/tsnet transfer logic and bundled wheels remain unchanged.
+
+Interfața, installerul și motorul citesc același cont SMB configurat, fără fallback `user`. Se verifică identitatea proceselor și răspunsuri proaspete pe sesiune; un proces găsit sau un log vechi nu confirmă pornirea. Python este extern, în mediu virtual; [cerințe și validare](COMPATIBILITY.md). Nu există wizard universal nou în RC15.1.

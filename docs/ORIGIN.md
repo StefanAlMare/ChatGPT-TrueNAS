@@ -32,6 +32,8 @@
 
 ## Historical acceptance / Ce a fost confirmat
 
-Prototype and RC1-era work began in early September 2026; successive RC2–RC13 candidates solved Finder integration, installer permissions, runtime reliability, dual-network upload, credentials and Reader/Drive access. **RC13 is the accepted internal macOS baseline.** **RC14 V8** introduces a storage abstraction and enhanced handoff protocol; its native build/signature audit passed, while final installation/E2E and source-free distribution are still pending.
+Prototype and RC1-era work began in early September 2026; successive RC2–RC13 candidates solved Finder integration, installer permissions, runtime reliability, dual-network upload, credentials and Reader/Drive access. **RC13 is the accepted internal macOS baseline.** **RC14 V8** introduces a storage abstraction and enhanced handoff protocol; its native build/signature audit passed and the sanitized derivative was publicly released on 8 October. This is historical acceptance, not RC15.1 E2E evidence.
 
 The precise RC-by-RC engineering narrative is in [HISTORY.md](../HISTORY.md). Private Git commits/logs remain private and must not be copied into a public repository.
+
+On 10 October, removing Homebrew exposed runtime portability requirements and an RC15 GUI/installer Keychain-account mismatch. [RC15.1](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc15.1) corrects identity and startup verification, retains sanitization and external-Python discovery, and passes isolated repair tests plus Apple notarization. Real administrative Update and transfer acceptance remain separate. / RC15.1 repară identitatea și verificarea pornirii; testele izolate și notarizarea nu înlocuiesc Update-ul real și transferul E2E.

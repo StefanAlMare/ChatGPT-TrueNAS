@@ -1,5 +1,7 @@
 # Modelul de securitate al Universal Installer — cerințe obligatorii
 
+**Version context / Context:** RC15.1 repairs startup and credential identity in the existing product. It does not implement this future wizard or change SMB/Tailscale transfer behavior. [Verified scope](STATUS.md) · [Compatibility](COMPATIBILITY.md).
+
 [Ghid utilizator](UNIVERSAL_INSTALLER.ro.md) · [Gazde și stocări](HOSTING_AND_STORAGE.md) · [Contract tehnic](WIZARD_CONTRACT.md) · [Acceptare și teste](ACCEPTANCE_INSTALLER.md)
 
 **Scop:** protejarea fișierelor utilizatorului, a cheilor de acces și a sistemelor NAS/PC, nu doar obținerea unui mesaj „Install successful”. Acesta este un **model de securitate în proiectare**, nu o certificare deja realizată pentru toate platformele. Aplicăm principiul **fail closed**: lipsa permisiunii, a dovezii de integritate sau a unei configurații necesare blochează acea funcție, fără ocolirea automată a protecțiilor.

@@ -16,7 +16,7 @@
 
 **6. Marks and affiliation.** Third-party names, logos and marks belong to their holders. The project does not assert approval or affiliation with OpenAI, Apple, Tailscale, TrueNAS/iXsystems, Google or GitHub. Product naming is subject to third-party trademark rights.
 
-**7. Pre-release limitation.** RC14 V8 is a macOS Intel reference/development preview with recorded build/signature/DMG checks, **not** a confirmed general-purpose NAS installer or fully accepted production release. Runtime E2E on the exact candidate, Apple notarization and compatibility with arbitrary NAS deployments are not established by the existing records. Use at your own risk and keep backups. The software is supplied **as is**, without warranty to the maximum extent legally permitted.
+**7. Pre-release limitation.** Official preview releases are macOS Intel development candidates, **not** confirmed general-purpose NAS installers or fully accepted production releases. RC15.1 has verified Apple notarization and isolated startup/rollback tests; real administrative Update, candidate transfer E2E and arbitrary NAS compatibility remain unvalidated. Historical RC14 notarization was not confirmed. See the version-specific release record. Use at your own risk and keep backups. The software is supplied **as is**, without warranty to the maximum extent legally permitted.
 
 **8. Permissions and licensing.** Request written permission for commercial use, source adaptation, integration, derivative works, paid services or redistribution privately from [@StefanAlMare](https://github.com/StefanAlMare). A GitHub issue, pull request, public download or lack of reply is not permission.
 
@@ -26,7 +26,7 @@
 
 **2. Utilizarea comercială cere acord scris.** Utilizarea în activitatea comercială/profesională a unei organizații, activitățile generatoare de venit, consultanța plătită, integrarea în alte produse, revânzarea, distribuția comercială, OEM/white-label și găzduirea contra cost **nu sunt autorizate fără licență separată în scris** din partea titularului.
 
-**3. Codul-sursă este proprietar.** Unele fișiere Python pot fi lizibile în pachetul oficial RC14. Este permisă executarea lor numai ca parte a utilizării autorizate a aplicației. Vizibilitatea lor **nu acordă dreptul** de a le extrage și reutiliza în alte produse, republica, modifica, distribui separat, vinde, sublicenția sau realiza versiuni derivate fără acordul scris prealabil. Repository-ul intern de dezvoltare rămâne privat. Publicarea unui DMG cu fișiere Python lizibile **nu le face confidențiale sau tehnic imposibil de copiat**.
+**3. Codul-sursă este proprietar.** Unele fișiere Python pot fi lizibile în pachetul oficial preview. Este permisă executarea lor numai ca parte a utilizării autorizate a aplicației. Vizibilitatea lor **nu acordă dreptul** de a le extrage și reutiliza în alte produse, republica, modifica, distribui separat, vinde, sublicenția sau realiza versiuni derivate fără acordul scris prealabil. Repository-ul intern de dezvoltare rămâne privat. Publicarea unui DMG cu fișiere Python lizibile **nu le face confidențiale sau tehnic imposibil de copiat**.
 
 **4. Conținut public GitHub.** Materialele efectiv publicate pot fi văzute și *forked* prin funcțiile GitHub în condițiile platformei, fără să transforme automat codul proprietar într-un proiect open-source.
 
@@ -34,7 +34,7 @@
 
 **6. Mărci și neafiliere.** Mărcile aparțin titularilor lor. Nu se pretinde parteneriat sau aprobare oficială din partea OpenAI, Apple, Tailscale, TrueNAS, Google ori GitHub.
 
-**7. Pre-release, fără garanție.** RC14 V8 este un candidat macOS Intel, nu un produs general configurabil pentru orice NAS; instalarea și testele E2E pentru această versiune și notarizarea Apple nu sunt confirmate. Este oferit „ca atare”, în limitele legii.
+**7. Pre-release, fără garanție.** Versiunile preview sunt candidați macOS Intel, fără certificare pentru orice NAS. RC15.1 are notarizare Apple verificată și teste izolate de pornire/rollback; Update-ul administrativ real, transferul E2E și compatibilitatea cu orice NAS rămân nevalidate. Notarizarea istorică RC14 nu a fost confirmată. Este oferit „ca atare”, în limitele legii.
 
 **8. Solicitări de autorizare.** Pentru orice folosire comercială, integrare, surse, modificări ori redistribuire, solicită **aprobarea explicită în scris** a titularului [@StefanAlMare](https://github.com/StefanAlMare).
 

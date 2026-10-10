@@ -18,7 +18,7 @@
 
 ## 2. Bundled source is visible, but not open-source
 
-The owner permits **only a sanitized, newly signed derivative of RC14 V8** as the first proprietary non-commercial preview. The **original DMG includes private NAS/SMB/Tailscale defaults and must not be published**. Unauthorized code reuse and commercial use remain prohibited. Its installer includes **readable owner-authored Python runtime code**. Publishing the DMG makes those bytes **publicly accessible**; calling that code “confidential after release” or promising technical prevention of copying would be false.
+The owner permits the **sanitized, signed and notarized RC15.1 preview**, continuing the historical RC14 V8 SANITIZED public lineage, under the same proprietary non-commercial terms. The **original DMG includes private NAS/SMB/Tailscale defaults and must not be published**. Unauthorized code reuse and commercial use remain prohibited. Its installer includes **readable owner-authored Python runtime code**. Publishing the DMG makes those bytes **publicly accessible**; calling that code “confidential after release” or promising technical prevention of copying would be false.
 
 Recipients may inspect the included files and execute the runtime as required for licensed non-commercial use. They receive **no general grant to republish, modify, sublicense, reuse in other products or resell** the owner's proprietary code. The private source/development repository itself is **not** copied into this public repository. Mandatory law and third-party licenses take precedence where applicable.
 
@@ -29,7 +29,7 @@ GitHub's terms allow public content to be viewed and forked **through the GitHub
 | Level | Public GitHub handling |
 | --- | --- |
 | PUBLIC DOCS | Sanitized README, history, diagrams, instructions, license, checksums are allowed |
-| AUTHORIZED PRE-RELEASE BINARY | RC14 V8 exact verified DMG may be attached to an explicit prerelease with license, known limits and checksums; **readable proprietary runtime source is intentionally disclosed as part of the artifact** |
+| AUTHORIZED PRE-RELEASE BINARY | The exact verified, sanitized RC15.1 DMG may be attached to an explicit prerelease with license, known limits and checksums; **readable proprietary runtime source is intentionally disclosed as part of the artifact** |
 | PRIVATE DEVELOPMENT | Owner's authoritative repository, build recipes, private checkpoints, non-distributed modifications remain private |
 | USER BATCH DATA | ZIPs, logs, personal snapshots stay in managed storage, not GitHub; retain only seven days in the reference live tree unless archived elsewhere |
 | SECRETS | SSH/SMB passwords, reusable VPN/Tailscale enrollment tokens, Apple signing private keys and API secrets must **never** be committed or bundled into any public asset |
@@ -39,7 +39,7 @@ GitHub's terms allow public content to be viewed and forked **through the GitHub
 
 **Batch transfer acceptance:** a frozen batch is uploaded atomically, verified at destination by byte count/SHA-256 and marked READY only when complete. This is not anti-malware certification and does not prove the current Chat can read the file.
 
-**RC14 prerelease packaging acceptance:** the exact DMG identified by SHA-256 passes the recorded DMG/signature checks. The **release is explicitly a test preview**: independent final RC14 graphical Update/E2E, Apple notarization and deployment to other NAS devices **are not confirmed**. No generic NAS setup wizard is available; a reference-configured package should not be advertised as universally plug-and-play.
+**RC15.1 prerelease packaging acceptance:** the exact DMG identified by SHA-256 passed image/signature checks, Apple notarization, stapling and Gatekeeper. The **release is explicitly a test preview**: isolated startup/rollback tests passed, but real administrative Update, reboot, transfer E2E and deployment to other NAS devices **are not confirmed**. No generic NAS setup wizard is available; a reference-configured package should not be advertised as universally plug-and-play.
 
 **Owner clarification, 8 October 2026:** source-bearing Python can be distributed under the non-commercial proprietary license only after removing **every personal NAS, SMB and Tailscale default** from the release and re-signing the rebuilt package. The original SHA-approved internal RC14 DMG is **not** approved for public distribution. **No passwords, private infrastructure identifiers, personal data or misleading notarization/E2E claims may be published.**
 

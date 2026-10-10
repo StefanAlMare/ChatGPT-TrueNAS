@@ -1,8 +1,10 @@
 # Matrice de teste și etape de lansare — Universal Installer
 
+**RC15.1 scope / Domeniu:** notarized startup/Keychain repair, not implementation of this universal-installer design. Twenty isolated repair cases passed; the separate [universal acceptance matrix](ACCEPTANCE_INSTALLER.md) remains a specification. [Current evidence / Dovezi curente](STATUS.md) · [Python requirements / Cerințe Python](COMPATIBILITY.md).
+
 [Ghidul pentru utilizator](UNIVERSAL_INSTALLER.ro.md) · [Stocare și gazde](HOSTING_AND_STORAGE.md) · [Securitate](SECURITY_INSTALLER.md) · [Contractul wizardului](WIZARD_CONTRACT.md)
 
-**Regula de raportare:** PASS este permis **doar** când există rezultat observat pe platforma reală și dovadă suficientă. SPECIFIED, SOURCE_READY, BUILT, INSTALLED și E2E_ACCEPTED sunt lucruri diferite. Pre-release RC14 V8 SANITIZED există, dar un wizard universal funcțional **nu există încă**.
+**Regula de raportare:** PASS este permis **doar** când există rezultat observat pe platforma reală și dovadă suficientă. SPECIFIED, SOURCE_READY, BUILT, INSTALLED și E2E_ACCEPTED sunt lucruri diferite. Pre-release RC15.1 NOTARIZED PREVIEW există, dar un wizard universal funcțional **nu există încă**.
 
 ## 1. Milestone-uri distincte
 
@@ -84,7 +86,7 @@
 - Reader: imagine oficială specificată prin versiune și digest, scanare dependențe și atestare de integritate.
 - Niciun pachet nu are IP/username/chei ale autorului, date personale ori credentiale hardcodate.
 - Licență proprietară necomercială; folosirea comercială, distribuirea și reutilizarea sursei necesită acord scris, cu respectarea licențelor terțe.
-- Istoricul RC13 rămâne reperul intern acceptat până când noul cod este validat. RC14 V8 public rămâne **pre-release**, nu certificare E2E.
+- Istoricul RC13 rămâne reperul intern acceptat până când noul cod este validat. RC15.1 public rămâne **pre-release**, nu certificare E2E.
 
 ## 5. Raportul final de acceptare
 

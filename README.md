@@ -7,13 +7,13 @@
 
 
 
-**[Download the first public RC14 V8 prerelease →](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14)** — Intel macOS, privacy-sanitized, proprietary non-commercial preview.
+**[Download RC15.1 — Update & Keychain Fix, notarized preview →](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc15.1)** — Intel macOS, privacy-sanitized, proprietary non-commercial preview.
 
 **ChatGPT-TrueNAS** is the public documentation and distribution project. **ChatGPT Drop** is the Apple/macOS application's current name. This is an independent project, not an official OpenAI, Apple, GitHub, Tailscale or iXsystems product.
 
 ## Universal Installer (design phase)
 
-A guided setup will cover official ChatGPT installation, ChatGPT Drop, TrueNAS, generic NAS and other storage, secure Reader/MCP access and retention. This **is not yet part of the RC14 app**.
+A guided setup will cover official ChatGPT installation, ChatGPT Drop, TrueNAS, generic NAS and other storage, secure Reader/MCP access and retention. This **is not yet part of the RC15.1 app**.
 
 [Full English guide](docs/UNIVERSAL_INSTALLER.md) · [Complete Romanian guide](docs/UNIVERSAL_INSTALLER.ro.md) · [Hardware and storage](docs/HOSTING_AND_STORAGE.md) · [Security](docs/SECURITY_INSTALLER.md) · [Technical contract](docs/WIZARD_CONTRACT.md) · [Acceptance tests](docs/ACCEPTANCE_INSTALLER.md)
 
@@ -66,24 +66,30 @@ The three independently configured layers are **upload, content reading, and ret
 
 [TrueNAS setup](docs/SETUP.md) · [Ordinary NAS and local-drive roadmap](docs/SETUP.md) · [Exact handover protocol for new Chat and Work](docs/HANDOVER.md)
 
-## Current status · 8 October 2026
+## Current status · 10 October 2026
+
+**RC15.1 fixes startup after Update:** the GUI now uses the configured SMB account, consistently with the installer and Python engine. Startup verification distinguishes the app, helper and engine using fresh evidence for each launch. It never automatically creates an alternative `user` credential.
 
 | Area | Verified state |
 | --- | --- |
-| **First public prerelease** | **[ChatGPT Drop 0.9.0-rc14 V8 — Sanitized](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14)**, macOS Intel x86_64, published 8 October 2026 |
-| **Verification** | RC14 V8 native build/DMG signature and integrity audit PASS. **RC14 full installation/E2E, Apple notarization and generic NAS usability not confirmed** |
-| **TrueNAS Reader** | Working after correcting its read-only mount to the live `ChatGPT-Live` tree; large ZIP server-side listing/read demonstrated |
-| **Seven-day retention** | **Operational on reference TrueNAS:** Cron ID 6; initial pass removed 31 expired batch directories; Drive Cloud Sync completed SUCCESS on 8 Oct |
-| **Installer distribution** | **Published:** privacy-sanitized, re-signed RC14 V8 DMG (23,093,113 bytes; SHA-256 `acfa658ee6e9408d18ceb20e6f2ef51a5e807660d5b9ec977b9623a3db39a8c6`). The original internal DMG remains private. **Free non-commercial use only**; no source reuse/commercial rights without written permission |
-| **Generic NAS, local/external disk, Windows, Ubuntu, Apple Silicon** | Architectural directions or unvalidated implementations; **not** advertised as finished products |
+| **Newest prerelease** | **[ChatGPT Drop 0.9.0-rc15.1 — Update & Keychain Fix](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc15.1)**, build 16, Intel x86_64 |
+| **Signing and notarization** | Developer ID; Apple **Accepted** for app, installer and DMG; tickets stapled and validated; Gatekeeper accepts all three |
+| **Repair tests** | **20 isolated cases PASS:** 10 startup, 8 installation/rollback, 2 stale-evidence cases; fixture Keychain backend, no real SMB password |
+| **Python** | No Homebrew dependency; external standard **CPython 3.14** required. MacPorts **3.14.8 tested natively**; official Python/Homebrew discovery retained, without fresh native tests of those distributions |
+| **Still to validate** | Administrative Update on a real installation, reboot and full RC15.1 transfer; official Python/Homebrew, macOS 15 and other computers |
+| **Existing installation** | Not updated during this repair; configuration, journals, backups and Keychain preserved |
+| **TrueNAS Reader and retention** | Historical 8 October evidence: Reader working, 31 expired directories removed, Drive sync SUCCESS; not retested or modified for this release |
+| **Other platforms and destinations** | Apple Silicon, Windows/Linux and generic NAS unvalidated; local/external backends and universal wizard unimplemented |
 
-[Detailed acceptance matrix](docs/STATUS.md) · [Release artifact record](docs/RELEASE.md) · [Roadmap](docs/ROADMAP.md)
+DMG: **23,051,823 bytes** · SHA-256: `ddd457567e63320621f61475559e2434d0434918c250d0c50a410dfb3e948074`.
+
+[What changed and why](releases/v0.9.0-rc15.1.md) · [Installation](docs/INSTALLATION.md) · [Python compatibility](docs/COMPATIBILITY.md) · [Detailed status](docs/STATUS.md) · [Release identity](docs/RELEASE.md) · [Roadmap](docs/ROADMAP.md)
 
 ## Free to use is not open-source
 
-**Official binaries may be used free of charge for personal, educational and other non-commercial purposes. Commercial/business use requires prior written approval**, as do repackaging, resale, redistribution, paid hosting, white-label/OEM integration and use of proprietary code in other products. The private development repository remains private. Some owner-authored Python files are readable inside this RC14 DMG: viewing them does **not** grant a source-reuse license. Third-party licenses and mandatory statutory rights remain intact.
+**Official binaries may be used free of charge for personal, educational and other non-commercial purposes. Commercial/business use requires prior written approval**, as do repackaging, resale, redistribution, paid hosting, white-label/OEM integration and use of proprietary code in other products. The private development repository remains private. Some owner-authored Python files are readable inside the official preview DMG: viewing them does **not** grant a source-reuse license. Third-party licenses and mandatory statutory rights remain intact.
 
-Publishing on GitHub **does not make the product open-source**. GitHub users can view/fork public materials under GitHub's Terms. The owner authorizes only the **privacy-sanitized, newly signed RC14 V8 derivative** for public distribution; its readable runtime source does **not** grant derivative code rights. Private repository content, credentials, signing keys and personal logs are not part of the publication.
+Publishing on GitHub **does not make the product open-source**. GitHub users can view/fork public materials under GitHub's Terms. The owner authorizes the **privacy-sanitized, signed RC15.1 preview** and the historical sanitized RC14 V8 preview for public distribution; its readable runtime source does **not** grant derivative code rights. Private repository content, credentials, signing keys and personal logs are not part of the publication.
 
 [Binding terms and permissions](LICENSE.md) · [Publishing/acceptance levels](docs/RIGHTS.md) · [Security](SECURITY.md) · [Third-party notices](THIRD_PARTY_NOTICES.md)
 

@@ -1,5 +1,13 @@
 # Development history / Istoricul dezvoltării
 
+## 10 October 2026 · RC15.1 Update & Keychain Fix
+
+**EN:** RC15 portability work retained discovery of external standard CPython 3.14 from MacPorts, official Python and Homebrew without requiring Homebrew. Native MacPorts 3.14.8 checks passed. The subsequent Update failure was traced to a hardcoded Swift Keychain account `user`, inconsistent with installer/core configuration. RC15.1 removes that mismatch, adds current-session startup evidence and distinct failure outcomes, and strengthens credential preflight/LaunchAgent rollback. Transfer logic and RC14 sanitization are preserved. **20 isolated cases PASS** with fixture credentials; Apple notarization **Accepted** for payload, installer and DMG, with stapling/signatures/Gatekeeper PASS. The working app, real Keychain, profile, journals and backups were not changed. No real administrative Update, reboot or candidate transfer E2E was performed. **[New notarized prerelease](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc15.1)**, build 16, 23051823 bytes, SHA-256 `ddd457567e63320621f61475559e2434d0434918c250d0c50a410dfb3e948074`. RC14 public release remains unchanged; the prior local RC15 DMG was not overwritten.
+
+**RO:** După eliminarea Homebrew am păstrat detectarea CPython standard 3.14 extern din MacPorts/Python oficial/Homebrew. MacPorts 3.14.8 a fost testat nativ. Eșecul Update RC15 provenea din contul Swift fix `user`, diferit de contul configurat în installer/motor. RC15.1 unifică identitatea, verifică pornirea pe sesiune și întărește preflight-ul/rollback-ul fără modificarea transferului. 20 cazuri izolate PASS, notarizare Apple Accepted pentru toate cele trei artefacte. Instalația funcțională și datele protejate rămân intacte; Update real/reboot/E2E și Python oficial/Homebrew sunt încă de validat nativ. Publicarea documentației și a release-ului a fost autorizată separat de titular; nu s-a utilizat CI.
+
+Historical entries below describe their dates, not the current release. / Intrările următoare sunt istorice.
+
 This is an edited public technical chronology, grounded in the private development records. It preserves outcomes and limits without publishing source, private operational logs, personal file names, credentials or the private Git history. “Source ready”, “built”, “installed” and “end-to-end accepted” are different milestones.
 
 Acesta este un istoric tehnic public redactat pe baza înregistrărilor private. Păstrează rezultatele și limitele, fără surse, loguri operaționale private, nume de fișiere personale, credențiale sau istoricul Git privat. Pregătirea sursei, build-ul, instalarea și acceptarea completă sunt etape distincte.
@@ -81,9 +89,9 @@ Au fost investigate Funnel, linkuri HTTPS limitate și variante zrok. Unele veri
 | V7 | Immediate lookup, 30-second retry and 900-second timeout applied; stopped at a case-sensitive parity literal / Protocol imediat aplicat, blocat de un literal sensibil la majuscule |
 | **V8** | Aligned that literal; native build, signatures, source parity, packaged immediate-retry markers and outer-DMG audit PASS / Literal aliniat; build, semnături, paritate și audit PASS |
 
-The latest candidate remains `0.9.0-rc14`, build `14`; V8 identifies the build-recipe revision, not an app version `0.9.0-rc14.8`. RC13 remains the accepted rollback reference until RC14 Update and E2E pass. No superseded installers are published here.
+At the 12 September checkpoint the latest candidate was `0.9.0-rc14`, build `14`; V8 identifies the build-recipe revision, not an app version `0.9.0-rc14.8`. RC13 remains the accepted rollback reference until RC14 Update and E2E pass. RC14 is retained as a historical public release after RC15.1 publication.
 
-Candidatul rămâne `0.9.0-rc14`, build `14`; V8 identifică revizia rețetei, nu o versiune a aplicației `0.9.0-rc14.8`. RC13 rămâne reperul acceptat până la validarea Update și E2E RC14. Installerele înlocuite nu sunt publicate aici.
+La checkpoint-ul din 12 septembrie candidatul era `0.9.0-rc14`, build `14`; V8 identifică revizia rețetei, nu o versiune a aplicației `0.9.0-rc14.8`. RC13 rămâne reperul acceptat până la validarea Update și E2E RC14. RC14 este păstrat ca release public istoric după publicarea RC15.1.
 
 ## Public publication audit · 8 October 2026
 

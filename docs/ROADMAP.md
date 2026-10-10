@@ -2,6 +2,10 @@
 
 **Goal:** avoid repeated whole-file uploads into ChatGPT while storing bytes under user control; preserve proprietary source and distribution rights. [Origin](ORIGIN.md) · [Routes](ROUTES.md) · [Rights/security](RIGHTS.md).
 
+## RC15.1 repair delivered
+
+[Notarized RC15.1 preview](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc15.1) fixes configured-account Keychain identity and startup verification. Twenty isolated cases passed; real administrative Update/reboot/transfer and python.org/Homebrew native acceptance remain next gates. [Evidence and boundaries](STATUS.md) · [Compatibility](COMPATIBILITY.md).
+
 ## New workstream — Universal Installer
 
 **First implementation target:** macOS + TrueNAS, preserving accepted RC13 behavior. [Step-by-step user journey (RO)](UNIVERSAL_INSTALLER.ro.md) · [English](UNIVERSAL_INSTALLER.md) · [Server/storage deployment](HOSTING_AND_STORAGE.md) · [Security baseline](SECURITY_INSTALLER.md) · [Wizard state-machine and backend contract](WIZARD_CONTRACT.md) · [Native test gates](ACCEPTANCE_INSTALLER.md).
@@ -13,7 +17,7 @@ Priorities are ordered, not release-date commitments. / Prioritățile sunt ordo
 | Priority | English | Română | Completion evidence / Dovadă |
 | --- | --- | --- | --- |
 | 1 | **COMPLETED:** published [sanitized proprietary RC14 V8 prerelease](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14); follow-up: generalized safe, configurable distribution | **REALIZAT:** primul pre-release RC14 V8 curățat și verificat; urmează installer universal configurabil | GitHub public asset `v0.9.0-rc14`, matching SHA-256 `acfa658ee6e9408d18ceb20e6f2ef51a5e807660d5b9ec977b9623a3db39a8c6`; source access and commercial use remain restricted |
-| 2 | Complete RC14 V8 native Update and E2E acceptance | Validarea nativă Update și E2E RC14 V8 | State preserved; real verified batch; actual content read; regression matrix / Stare păstrată, lot verificat, conținut citit, regresii |
+| 2 | Complete RC15.1 real administrative Update, reboot and E2E acceptance; natively test official Python/Homebrew | Update real, reboot și E2E RC15.1; teste native Python oficial/Homebrew | State preserved; real verified batch; actual content read; regression matrix / Stare păstrată, lot verificat, conținut citit, regresii |
 | 3 | General deployment provisioning | Configurare pentru instalări independente | No private deployment assumptions; host/share/account/peer setup tested / Fără presupuneri private; configurare testată |
 | 4 | Implement local-folder backend | Implementarea backend-ului local | Same journal, atomic write, byte/SHA and READY semantics; native E2E / Aceleași garanții, test nativ |
 | 5 | Implement external-volume backend | Implementarea backend-ului extern | Stable volume identity, unplug/replug and safe resume tests / Identitate stabilă, reconectare și reluare sigură |

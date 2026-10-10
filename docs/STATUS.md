@@ -1,17 +1,37 @@
 # Feature and validation status / Stadiul funcționalităților
 
+Reviewed / Revizuit: **2026-10-10**. Current public candidate / Candidat public curent: **[RC15.1 build 16](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc15.1)**, notarized prerelease. Historical accepted internal baseline / Reper istoric acceptat: **RC13**. RC15.1 is not promoted to stable or complete E2E acceptance.
 
-**Read first / Citește întâi:** [purpose and origin](ORIGIN.md) · [three route diagrams](ROUTES.md) · [setup](SETUP.md) · [handover](HANDOVER.md) · [proprietary rights and admission gates](RIGHTS.md). Note: **[RC14 V8 sanitized prerelease is now public](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14)** under a proprietary non-commercial license. The original DMG with private infrastructure values was **not** published. The current binary is **not** a verified generic NAS installer.
+[Release notes](../releases/v0.9.0-rc15.1.md) · [Validation summary](../releases/v0.9.0-rc15.1-validation.json) · [Python compatibility](COMPATIBILITY.md) · [Installation](INSTALLATION.md) · [Rights](RIGHTS.md)
 
-Reviewed / Revizuit: **2026-10-08**.
+## RC15.1 repair evidence / Dovezi reparație
 
-**Accepted baseline: RC13. Active candidate: RC14 V8. RC14 is not promoted.**
+| Gate / Verificare | Observed result / Rezultat |
+| --- | --- |
+| Hardcoded Swift account in RC15 | Confirmed by binary inspection; removed in RC15.1 / Confirmat în binar; eliminat |
+| Configured account identity | GUI, installer and Python use the same configuration username, no generic fallback / Aceeași identitate, fără cont alternativ |
+| Native isolated startup | **10/10 PASS**, including delayed start, missing credentials, helper failure, early crashes and timeout |
+| Isolated installer/rollback | **8/8 PASS**; real fixture file restoration, isolated administration/process control and mocked old-app relaunch |
+| Old/wrong-session evidence | **2/2 PASS**; stale evidence cannot prove startup |
+| Additional checks | Swift identity/outcome, sanitization, transfer-code parity and protected-file preservation **PASS** |
+| Credential test boundary | Fixture backend with real configured account identity, fictitious password; real SMB password unused and unchanged |
+| Signing/notarization | Apple **Accepted** for payload, installer, DMG; stapling, strict signatures, Gatekeeper, DMG integrity **PASS** |
+| Native environment | Intel macOS 26.7.1; MacPorts CPython 3.14.8 |
+| Installed production app | **Not updated**; configuration, journals, backups, profiles and Keychain preserved |
 
-**Versiune acceptată: RC13. Candidat activ: RC14 V8. RC14 nu este promovat.**
+## Remaining acceptance / Validări rămase
 
-Recorded acceptance is environment-specific. A build/static audit PASS cannot substitute for installing that exact candidate and exercising its real workflow. The October publication audit did not install or launch the application or modify a NAS.
+1. Controlled real administrative Update and verified rollback, preserving actual state/Keychain; reboot and login behavior.
+2. Harmless real batch over direct SMB and private embedded Tailscale; exact destination bytes/SHA, READY and clipboard.
+3. Actual content reading via Reader/MCP or configured Drive mirror; interrupted-transfer retry, Copy Last and Quit regressions.
+4. Native tests with official python.org/Homebrew CPython 3.14, declared macOS 15 minimum and additional Intel computers.
+5. Independent support work for Apple Silicon, other OSes, generic NAS provisioning, universal wizard and local/external backends.
 
-Acceptarea istorică privește mediul testat. Un build sau audit static PASS nu înlocuiește instalarea candidatului exact și utilizarea reală. Auditul din octombrie nu a instalat/lansat aplicația și nu a modificat NAS-ul.
+**Română:** testele izolate nu sunt Update administrativ pe instalația reală, reboot sau transfer E2E. Notarizarea confirmă verificarea distribuției, nu compatibilitatea cu orice calculator. MacPorts este testat; Python oficial/Homebrew sunt detectate, dar rămân de testat nativ. TrueNAS/Reader/retenția nu au fost modificate pentru reparație.
+
+## Historical capabilities and limits / Funcții și limite istorice
+
+The following RC12–RC14 and 8 October evidence is retained as history; it is not a fresh RC15.1 transfer or server test.
 
 | Capability / Funcție | Evidence and actual limit / Dovezi și limită reală |
 | --- | --- |
@@ -38,16 +58,4 @@ Acceptarea istorică privește mediul testat. Un build sau audit static PASS nu 
 | RC14 graphical Update/state preservation/app launch | **Not yet validated** / **Încă nevalidate** |
 | RC14 V8 DMG bytes/SHA, integrity and signatures | Fresh checks PASS on 8 October, without install / PASS reverificat la 8 octombrie, fără instalare |
 | RC14 V8 public binary | **PUBLISHED as sanitized prerelease, 8 Oct 2026:** 23,093,113 bytes, SHA-256 `acfa658ee6e9408d18ceb20e6f2ef51a5e807660d5b9ec977b9623a3db39a8c6`; GitHub API digest and owner download check PASS. Private original never uploaded. / **PUBLICAT pre-release curățat**, hash verificat; originalul privat nu a fost publicat. Proprietary-source reuse/commercial use still requires written approval |
-| Notarization acceptance | Not established by available evidence / Nedovedită de informațiile disponibile |
-
-## RC14 acceptance still required / Validări RC14 rămase
-
-1. Graphical Update from the exact candidate; app launch and configuration/state/Keychain preservation / Update exact, lansare și păstrarea stării/configurației/Keychain.
-2. Harmless Finder batch through direct SMB and the private embedded transport / Lot de test prin SMB direct și transportul privat integrat.
-3. Destination bytes/SHA and READY only after the whole batch verifies / Octeți/SHA și READY numai după verificarea întregului lot.
-4. Real clipboard controls plus actual content reading through Reader or the configured Drive fallback / Markeri reali clipboard și citirea conținutului prin Reader sau Drive.
-5. Regression checks for retry/resume, Copy Last, Quit and login behavior / Regresii pentru reluare, ultimul mesaj, Quit și pornire.
-
-Public distribution readiness is a separate gate from RC14 runtime acceptance. No automatic cleanup or platform support is inferred from future design documents.
-
-Pregătirea distribuției publice este separată de acceptarea runtime-ului RC14. Documentele de proiectare viitoare nu dovedesc ștergerea automată sau suportul altor platforme.
+| Historical RC14 notarization | Not confirmed for RC14; RC15.1 notarization is verified separately below / Neconfirmată RC14; RC15.1 verificat separat |

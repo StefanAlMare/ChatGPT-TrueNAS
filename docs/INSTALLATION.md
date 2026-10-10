@@ -1,7 +1,7 @@
 # Installation and use / Instalare și utilizare
 
 
-**Universal Installer work in progress / Proiectare installer universal:** [full RO step-by-step](UNIVERSAL_INSTALLER.ro.md) · [EN guide](UNIVERSAL_INSTALLER.md) · [storage/server choices](HOSTING_AND_STORAGE.md) · [security requirements](SECURITY_INSTALLER.md). This does not change the RC14 prerelease's current limited deployment support.
+**Universal Installer work in progress / Proiectare installer universal:** [full RO step-by-step](UNIVERSAL_INSTALLER.ro.md) · [EN guide](UNIVERSAL_INSTALLER.md) · [storage/server choices](HOSTING_AND_STORAGE.md) · [security requirements](SECURITY_INSTALLER.md). RC15.1 fixes startup; it does not implement this future universal wizard.
 
 **Start here / Începe aici:** [Why this exists](ORIGIN.md) · [Three data routes](ROUTES.md) · [Setup checklist for TrueNAS, generic NAS and drives](SETUP.md) · [Chat/Work handover](HANDOVER.md) · [Proprietary code and public release gates](RIGHTS.md).
 
@@ -9,11 +9,11 @@
 
 ### Before you begin
 
-**[RC14 V8 SANITIZED is published as a public prerelease](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14).** Download only the **-SANITIZED.dmg** file (23,093,113 bytes, SHA-256 `acfa658ee6e9408d18ceb20e6f2ef51a5e807660d5b9ec977b9623a3db39a8c6`). This is a proprietary **non-commercial** testing preview, not a validated universal NAS setup wizard. Reader/MCP requires separate deployment.
+**[Download RC15.1 — Update & Keychain Fix](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc15.1)**, a notarized proprietary non-commercial preview. File: `ChatGPT-Drop-Installer-macOS-x86_64-0.9.0-rc15.1-UPDATE-KEYCHAIN-FIX-PREVIEW-NOTARIZED.dmg`; **23051823 bytes**; SHA-256 `ddd457567e63320621f61475559e2434d0434918c250d0c50a410dfb3e948074`. Compare against [the release record](RELEASE.md).
 
-The exact RC14 V8 candidate is Intel x86_64. Intel native build evidence exists; Apple Silicon native/universal compatibility and a general minimum macOS support matrix are not established. macOS 15.7.9 appears in earlier Intel installer tests; this is historical evidence, not a guaranteed RC14 minimum or full support matrix. No notarization acceptance result is established by the signing PASS markers alone.
+**Intel x86_64; external standard CPython 3.14 required.** No Homebrew dependency and no standalone Python bundled. MacPorts 3.14.8 passed native tests on macOS 26.7.1. Official python.org/Homebrew discovery is retained but not natively retested; keep the chosen Python installed. Declared macOS minimum is 15, without fresh native macOS 15 validation. System Python is not modified. [Full compatibility matrix](COMPATIBILITY.md).
 
-The candidate derives from an internal deployment with fixed destination/provisioning assumptions. A public multi-profile wizard is not implemented. **Do not assume that changing an SMB password configures an arbitrary host, share, account or private peer.** A maintainer-adapted package and native validation are needed for a different deployment. No private endpoint values are reproduced here.
+The package preserves RC14 sanitization and reads the existing deployment configuration. It does not provide a general host/share/account/peer wizard. Configure a valid NAS profile separately with the maintainer before use; changing only a password does not configure a destination. Reader/MCP and retention remain separate server deployments.
 
 ### Prepare a TrueNAS destination
 
@@ -25,13 +25,13 @@ The candidate derives from an internal deployment with fixed destination/provisi
 
 TrueNAS Reader deployment requires a separately provided authorized server package. Conceptually, mount only the managed tree read-only into the Reader, align its service identity with read-only dataset ACLs, keep the container filesystem read-only, and connect a single central secure MCP tunnel. Configure `CHATGPT_INBOX_ROOT` to the service's mounted root; the legacy environment-variable name does not require the obsolete `ChatGPT-Inbox` storage layout. The Reader endpoint uses streamable HTTP at `/mcp`, internally on port 8000 in the recorded setup. No public server image, credentials or turnkey Compose deployment is supplied here.
 
-### Install or update the Mac application, when the exact DMG is available
+### Install or update the Mac application, on a test installation
 
 1. Obtain the official DMG and compare both its size and SHA-256 with [RELEASE.md](RELEASE.md). A matching filename alone is insufficient.
-2. Open it and launch **ChatGPT Drop Installer.app**. The graphical installer is the intended visible DMG entry point. Do not follow old `.command`-based RC4 instructions for RC14.
+2. Open it and launch **ChatGPT Drop Installer.app**. The graphical installer is the intended visible DMG entry point. Use the graphical installer, not historical `.command` instructions.
 3. Choose **Install** for a clean installation or **Update** for an existing installation, then authorize macOS when prompted. The expected application location is `/Applications/ChatGPT Drop.app`.
-4. Confirm the menu-bar app launches. On update, check that configuration, state and credentials survive. **This exact RC14 V8 Update sequence is still unvalidated.**
-5. Use **Configure SMB credential…** to store the password in Keychain for the package's agreed account. Never paste it into an issue or ChatGPT message.
+4. Confirm the menu-bar app launches. On update, check that configuration, state and credentials survive. **Real administrative RC15.1 Update on the working installation is still untested.** Credential preflight runs before stopping the old app. Isolated rollback tests passed, including LaunchAgent restoration; this does not replace a controlled real Update test.
+5. Use **Configure SMB credential…** to store the password in Keychain for the username in the existing configuration. No generic `user` credential is created automatically. A clean installation without credentials reports `WAITING_FOR_CONFIGURATION`, not a verified engine. Never paste it into an issue or ChatGPT message.
 6. If private remote access is needed, use **Configure Tailscale…** with enrollment material for your own tailnet. No shared universal enrollment key is provided. The RC13 design needs no separate Mac Tailscale application or system VPN interface.
 7. Set **Start at Login** if desired and perform the harmless first-use test below before relying on the candidate.
 
@@ -48,11 +48,11 @@ TrueNAS Reader deployment requires a separately provided authorized server packa
 | Green | Entire batch verified; clipboard ready |
 | Red | Error/retry; staged originals retained |
 
-3. Confirm the expected category/date/batch path exists on the NAS. For RC14 acceptance, independently verify destination bytes and SHA-256 and the exact clipboard controls.
+3. Confirm the expected category/date/batch path exists on the NAS. For candidate acceptance, independently verify destination bytes and SHA-256 and the exact clipboard controls.
 4. Paste the prepared message into ChatGPT with the authorized Reader or Drive connector available. Require an actual content read. READY alone does not demonstrate Reader access.
 5. Use **Copy batch message again** / Copy Last to restore the last completed handoff. **Quit ChatGPT Drop** stops the current session's application/core; Start at Login is a separate next-login preference. The brief Finder/Automator task spinner is not upload progress.
 
-The hidden staging queue is `~/Library/Application Support/chatgpt-drop/inbox`; the user workflow is Finder selection, not the obsolete visible Desktop drop folder. User state is under `~/Library/Application Support/chatgpt-drop`, and logs under `~/Library/Logs/chatgpt-drop`. Treat config, journals, clipboard messages and logs as private. Uninstall is expected to preserve user state/logs and Keychain credentials for non-destructive reinstallation; it is not a privacy wipe. RC14-specific installer behavior still requires validation.
+The hidden staging queue is `~/Library/Application Support/chatgpt-drop/inbox`; the user workflow is Finder selection, not the obsolete visible Desktop drop folder. User state is under `~/Library/Application Support/chatgpt-drop`, and logs under `~/Library/Logs/chatgpt-drop`. Treat config, journals, clipboard messages and logs as private. Uninstall is expected to preserve user state/logs and Keychain credentials for non-destructive reinstallation; it is not a privacy wipe. Real administrative installer behavior still requires validation.
 
 ### Ordinary SMB NAS
 
@@ -60,7 +60,7 @@ The SMB storage adapter makes a generic NAS a plausible target, but there is no 
 
 ### Local Mac storage and external drives
 
-**Not implemented in RC14 V8.** There is no working “This Mac” or “External Drive” backend to select. The hidden local queue is staging, not a local-storage destination mode. Do not treat an SMB-path workaround or a planned wizard screen as implemented support.
+**Not implemented in RC15.1.** There is no working “This Mac” or “External Drive” backend to select. The hidden local queue is staging, not a local-storage destination mode. Do not treat an SMB-path workaround or a planned wizard screen as implemented support.
 
 The planned workflow is to select a managed folder or stable volume identity, verify write/read/atomic operations, configure a Reader/connector and choose retention. External-volume disappearance must pause safely and resume after reconnection. These need separate implementations and native tests before installation instructions can become operational. See [ROADMAP.md](ROADMAP.md).
 
@@ -77,22 +77,22 @@ The planned workflow is to select a managed folder or stable volume identity, ve
 
 ### Disponibilitate și pregătire
 
-**[Primul pre-release public RC14 V8 SANITIZED este disponibil](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14).** Descarcă numai fișierul **-SANITIZED.dmg** (23.093.113 octeți, SHA-256 `acfa658ee6e9408d18ceb20e6f2ef51a5e807660d5b9ec977b9623a3db39a8c6`). Acest candidat proprietar este gratuit pentru folosire **necomercială**, dar nu include configurare universală pentru orice NAS sau implementarea Reader.
+**[Descarcă RC15.1 — Update & Keychain Fix](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc15.1)**: preview Intel x86_64 notarizat, gratuit pentru utilizare necomercială. Fișier `ChatGPT-Drop-Installer-macOS-x86_64-0.9.0-rc15.1-UPDATE-KEYCHAIN-FIX-PREVIEW-NOTARIZED.dmg`, **23051823 octeți**, SHA-256 `ddd457567e63320621f61475559e2434d0434918c250d0c50a410dfb3e948074`.
 
-Candidatul RC14 V8 este Intel x86_64. Compatibilitatea nativă Apple Silicon/universal și matricea completă de versiuni macOS nu sunt stabilite. Testele Intel anterioare menționează macOS 15.7.9, fără a garanta un minim RC14. Semnarea reușită nu dovedește singură acceptarea notarizării.
+Este necesar **CPython standard 3.14 extern**. Nu depinde de Homebrew și nu include Python autonom. MacPorts 3.14.8 este testat nativ pe macOS 26.7.1; detectarea Python oficial/Homebrew este păstrată, fără teste native noi. Python-ul macOS nu este modificat. Minimul declarat macOS 15 rămâne de validat. Păstrează Python-ul ales instalat. [Compatibilitate completă](COMPATIBILITY.md).
 
-Pachetul provine dintr-o instalare internă cu presupuneri fixe despre destinație și înrolare. Meniul parolei SMB nu configurează orice server, share, cont sau peer. O altă instalare necesită pachet adaptat de autor și validare nativă.
+Configurația existentă este citită fără cont SMB hardcodat. Pentru altă destinație stabilești separat server/share/cont/root/peer; meniul parolei nu este wizard universal. Reader și retenția se instalează separat.
 
 Pe TrueNAS pregătești un dataset și un share dedicate, capacitate și backup, plus un cont SMB cu drepturi în arborele administrat. Stabilești cu autorul corespondența server/share/cont/peer/rădăcină. Rădăcina logică activă este **`ChatGPT-Live`**; `ChatGPT-Inbox` aparține prototipului. Pentru acces din afara LAN sunt necesare peer-ul privat al NAS-ului, politica tailnet și înrolarea fiecărei instalări Mac.
 
 Citirea prin ChatGPT se configurează separat: Reader/MCP central sau oglindă Drive care păstrează categoriile. Reader necesită un pachet autorizat separat, acces exclusiv de citire la arborele administrat, identitate de serviciu compatibilă cu ACL-urile și un singur tunel MCP central. Variabila istorică `CHATGPT_INBOX_ROOT` indică rădăcina montată în serviciu, fără a impune structura veche. Endpoint-ul înregistrat este `/mcp`, streamable HTTP, pe portul intern 8000. Aici nu este distribuită o implementare instalabilă a serverului.
 
-### Instalare și utilizare din pre-release-ul public RC14 V8
+### Instalare și utilizare RC15.1 pe o instalare de test
 
 1. Verifici octeții și SHA-256 conform [RELEASE.md](RELEASE.md), apoi deschizi **ChatGPT Drop Installer.app** din DMG.
-2. Alegi **Install** sau **Update** și autorizezi macOS. Aplicația trebuie să ajungă în `/Applications/ChatGPT Drop.app`. Instrucțiunile vechi cu `.command` nu reprezintă interfața RC14.
-3. Confirmi lansarea în bara de meniu și păstrarea stării/configurației/parolelor la actualizare. **Această secvență exactă RC14 V8 rămâne nevalidată.**
-4. Salvezi parola în Keychain prin **Configure SMB credential…**, pentru contul stabilit cu autorul. Pentru acces privat folosești **Configure Tailscale…** cu înrolarea propriului tailnet; nu este furnizată o cheie universală. Arhitectura RC13 nu cere o aplicație Tailscale separată pe Mac.
+2. Alegi **Install** sau **Update** și autorizezi macOS. Aplicația trebuie să ajungă în `/Applications/ChatGPT Drop.app`. Instrucțiunile vechi cu `.command` nu reprezintă interfața actuală.
+3. Confirmi lansarea în bara de meniu și păstrarea stării/configurației/parolelor la actualizare. **Update-ul administrativ RC15.1 pe instalația funcțională nu a fost efectuat.** Preflight-ul verifică credentialul înainte de oprire. Rollback-ul a trecut teste izolate, inclusiv restaurarea LaunchAgent; testul real rămâne necesar.
+4. Salvezi parola în Keychain prin **Configure SMB credential…**, pentru contul din configurație. Nu se creează automat un cont alternativ `user`. La instalare fără credential, `WAITING_FOR_CONFIGURATION` înseamnă că trebuie configurat; nu confirmă pornirea motorului. Pentru acces privat folosești **Configure Tailscale…** cu înrolarea propriului tailnet; nu este furnizată o cheie universală. Arhitectura RC13 nu cere o aplicație Tailscale separată pe Mac.
 5. Alegi **Start at Login** dacă dorești. Trimiți din Finder un fișier text mic, fără date sensibile, prin **Quick Actions → Send to ChatGPT Drop**.
 6. Urmărești stările: gri = inactiv; galben = stabilizare; albastru = transfer/verificare; verde = lot verificat și clipboard pregătit; roșu = eroare/reluare, copiile păstrate.
 7. Confirmi calea, octeții și SHA pe NAS, apoi lipești mesajul în ChatGPT cu Reader sau Drive disponibil și ceri citirea conținutului. READY nu dovedește accesul la Reader.
@@ -105,6 +105,12 @@ Coada ascunsă este `~/Library/Application Support/chatgpt-drop/inbox`, starea e
 
 Un NAS SMB obișnuit necesită adaptare și teste proprii de autentificare, scriere/citire/redenumire, SHA, întrerupere/reluare și READY. Nu există validare pentru toate dispozitivele SMB sau asistent public complet. Dacă NAS-ul nu poate găzdui Reader, este necesară o gazdă Reader accesibilă separat ori o oglindă compatibilă.
 
-**Folderul local și discul extern nu sunt implementate în RC14 V8.** Coada locală nu este mod de stocare locală. Profilurile viitoare vor necesita selecția folderului/volumului, operații atomice verificate, rută de citire și retenție; deconectarea discului trebuie tratată fără pierderea jurnalului.
+**Folderul local și discul extern nu sunt implementate în RC15.1.** Coada locală nu este mod de stocare locală. Profilurile viitoare vor necesita selecția folderului/volumului, operații atomice verificate, rută de citire și retenție; deconectarea discului trebuie tratată fără pierderea jurnalului.
 
 La erori de transfer păstrezi coada și jurnalul. Dacă Reader lipsește, activezi/reîmprospătezi uneltele sau folosești oglinda Drive configurată. Pentru fișiere proaspete se aplică traversarea directă la 30 de secunde, maximum 900 de secunde. Arhivele mari necesită citire pe membri când descărcarea integrală nu este disponibilă. Retenția la 168 de ore **a fost instalată și verificată pe TrueNAS-ul de referință la 8 octombrie 2026**: Cron ID 6, 31 de directoare expirate șterse, Cloud Sync PUSH+SYNC SUCCESS. Pe alt NAS trebuie configurată și verificată separat; scriptul privat nu este distribuit aici.
+
+## Startup diagnostics / Diagnostic pornire
+
+GUI launch, helper launch and Python engine readiness are separate. Fresh per-launch evidence must establish `CORE_VERIFIED`; an old log or process-name match is insufficient. `CREDENTIAL_NOT_FOUND` means the configured account lacks an accessible credential; `CORE_START_FAILED` means launch failed; `CORE_EXITED` means the engine ended; `CORE_START_TIMEOUT` means current readiness was not proven within the deadline. GUI failures have separate app statuses. Keep session logs private; do not create a generic credential to hide an identity mismatch.
+
+Pornirea aplicației grafice, a helperului și a motorului Python sunt verificate separat. Păstrează logurile sesiunii și jurnalele pentru diagnostic. Nu șterge Keychain, profilele sau backupurile și nu ocoli Gatekeeper. Dacă macOS respinge pachetul, raportează versiunea și eroarea fără date private.

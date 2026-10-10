@@ -2,13 +2,15 @@
 
 **New guided installer project:** [Romanian first-run wizard](UNIVERSAL_INSTALLER.ro.md) · [English](UNIVERSAL_INSTALLER.md) · [Detailed per-hardware guide](HOSTING_AND_STORAGE.md) · [Security hardening and threats](SECURITY_INSTALLER.md). **These are specifications for the future general installer, not executable installers or a ready-to-deploy public Reader image.**
 
-**Current product boundary:** the proven deployment is macOS Intel → SMB/TrueNAS → Reader/MCP or Drive mirror. The owner has published **[the sanitized RC14 V8 prerelease](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14)** for non-commercial preview use; only the new `-SANITIZED.dmg` is public, with SHA-256 `acfa658ee6e9408d18ceb20e6f2ef51a5e807660d5b9ec977b9623a3db39a8c6`. Readable Python runtime remains proprietary and is not licensed for reuse. The repository still does not include a Reader container or general NAS configuration wizard; other deployments require adaptation/testing.
+**Current release:** [RC15.1 — Update & Keychain Fix](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc15.1), notarized Intel preview. External standard CPython 3.14 required; MacPorts 3.14.8 tested, official Python/Homebrew native validation pending. [Installation](INSTALLATION.md) · [Compatibility](COMPATIBILITY.md).
+
+**Historical public lineage:** the proven deployment is macOS Intel → SMB/TrueNAS → Reader/MCP or Drive mirror. The owner has published **[the sanitized RC14 V8 prerelease](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14)** for non-commercial preview use; the historical public artifact is the `-SANITIZED.dmg`, with SHA-256 `acfa658ee6e9408d18ceb20e6f2ef51a5e807660d5b9ec977b9623a3db39a8c6`. Readable Python runtime remains proprietary and is not licensed for reuse. The repository still does not include a Reader container or general NAS configuration wizard; other deployments require adaptation/testing.
 
 ## A. TrueNAS reference checklist / Configurare TrueNAS
 
 1. **Storage:** create a dedicated dataset/folder `ChatGPT-Live` within a chosen SMB share. Keep unrelated data and permanent backups **outside** it. Example NAS host path: `/mnt/<pool>/<dataset>/ChatGPT-Live`.
 2. **SMB and account:** enable an authenticated SMB share. Give the ChatGPT Drop upload account only the create, read, rename and write permissions needed in that managed tree. Test from the Mac over the local/private network. Do not publish SMB/445 to the open internet.
-3. **macOS ChatGPT Drop:** obtain an authorized compatible client build and configure its SMB host, share, root and account, with password in macOS Keychain. The existing RC14 candidate is **not** a generic setup wizard; do not reuse another person's hard-coded endpoint.
+3. **macOS ChatGPT Drop:** obtain an authorized compatible client build and configure its SMB host, share, root and account, with password in macOS Keychain. The current RC15.1 candidate is **not** a generic setup wizard; do not reuse another person's hard-coded endpoint.
 4. **Private remote upload (optional):** connect NAS and individual Mac installation to an authorized Tailscale tailnet. The embedded macOS tsnet node must enroll separately. Test direct SMB first; simulate an unavailable LAN path and verify private SMB/Tailscale with a harmless file. Never embed a reusable universal auth key.
 5. **Reader:** run the authorized TrueNAS Reader centrally as a read-only service. Its source data mount must be `/mnt/<pool>/<dataset>/ChatGPT-Live:/data:ro`; the Reader's configured root should resolve to `/data`. Reader filesystem/container and service account should have no write capability into managed data. Verify `list_files`, `list_batch`, `file_info` and `zip_list` with actual data. The historical variable name `CHATGPT_INBOX_ROOT` may remain, but **must not** point to the retired `ChatGPT-Inbox` tree.
 6. **ChatGPT connector:** connect the one central Reader to a compatible authenticated ChatGPT environment through its secure MCP tunnel. Reader tool availability varies by **Chat, Project, Work and Codex**; check it in the actual destination conversation. Do not equate “connected tunnel” with a usable tool in every Chat.
@@ -28,7 +30,7 @@ A generic NAS may offer SMB storage even if it cannot run a Reader. It needs a w
 
 Planned profiles: “This Mac” and “External Drive”. The intended implementation requires a storage adapter supporting atomic destination operations, journal/retry, volume identity and detach/reconnect handling, plus a **Reader/connector reachable by ChatGPT** and a suitable local retention worker. A cloud chat cannot automatically read an arbitrary disk merely because files exist there.
 
-**Neither local-folder nor external-volume destination adapter is implemented in RC14 V8.** Its private macOS queue is not a local-storage product profile. Do not present this as ready to install.
+**Neither local-folder nor external-volume destination adapter is implemented in RC15.1.** Its private macOS queue is not a local-storage product profile. Do not present this as ready to install.
 
 ## D. Operational quick checks / Verificări
 
@@ -38,6 +40,6 @@ Planned profiles: “This Mac” and “External Drive”. The intended implemen
 | Reader | Real directory, metadata, ZIP-member and content reads succeed in the intended conversation |
 | Drive fallback | Direct traversal finds exact batch; actual content readable, not just metadata |
 | Retention | Cron is enabled; expired managed batch removed; corresponding Cloud Sync succeeds |
-| Installer/release | Owner-authorized RC14 may expose proprietary runtime source (no reuse rights); **no secrets**, proper upstream notices, checksum/signing verified; RC14 E2E, notarization and generic NAS remain unverified |
+| Installer/release | Owner-authorized sanitized RC15.1 may expose proprietary runtime source (no reuse rights); no secrets; notices/hash/signing/notarization verified; real Update/E2E and generic NAS remain unvalidated |
 
 [Routes and diagrams](ROUTES.md) · [Handover](HANDOVER.md) · [Security and acceptance gates](RIGHTS.md)

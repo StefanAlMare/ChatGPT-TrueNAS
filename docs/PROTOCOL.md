@@ -4,7 +4,7 @@
 
 ## English
 
-The clipboard message is a self-contained **FIND + ANALYZE** contract for the receiving assistant. Its rules are packaged in RC14 V8, but their execution on a real RC14 batch remains unvalidated. Tool availability, access permissions, format support and the assistant's ability to retry determine what can actually run.
+The clipboard message is a self-contained **FIND + ANALYZE** contract for the receiving assistant. Its rules originated in RC14 V8 and are preserved in RC15.1. Execution on a real RC15.1 batch remains unvalidated. Tool availability, access permissions, format support and the assistant's ability to retry determine what can actually run.
 
 1. **Locate immediately.** Prefer Reader/MCP, starting with the batch listing and exact returned paths. If Reader is unavailable, immediately traverse the configured Drive mirror through category → date → batch → expected file.
 2. **Match identity.** Use exact filename/path and byte count, plus SHA-256 when exposed. Metadata establishes identity, not content.
@@ -23,7 +23,7 @@ Where the returned path begins `ChatGPT-Live/`, remove only that prefix when res
 
 ## Română
 
-Mesajul din clipboard transmite asistentului un contract **FIND + ANALYZE**. Regulile sunt incluse în pachetul RC14 V8, dar executarea lor pe un lot RC14 real rămâne nevalidată. Disponibilitatea uneltelor, permisiunile, formatele acceptate și posibilitatea asistentului de a relua căutarea determină ce se poate executa efectiv.
+Mesajul din clipboard transmite asistentului un contract **FIND + ANALYZE**. Regulile provin din RC14 V8 și sunt păstrate în RC15.1; executarea pe un lot real RC15.1 rămâne nevalidată. Disponibilitatea uneltelor, permisiunile, formatele acceptate și posibilitatea asistentului de a relua căutarea determină ce se poate executa efectiv.
 
 Se încearcă imediat Reader/MCP și listarea lotului. Dacă Reader nu este disponibil, se traversează imediat oglinda Drive: categorie → dată → lot → fișier. Identitatea se verifică prin nume/cale exacte și octeți, plus SHA când este disponibil. Pentru un lot sau fișier încă nevizibil se repetă listarea directă la **30 de secunde**, până la **900 de secunde de la prima încercare**. Căutarea globală este doar rezervă; lipsa rezultatelor nu dovedește absența unui fișier proaspăt sincronizat.
 

@@ -1,8 +1,10 @@
 # Universal Installer — guided user journey (design v0.1)
 
+**RC15.1 scope / Domeniu:** notarized startup/Keychain repair, not implementation of this universal-installer design. Twenty isolated repair cases passed; the separate [universal acceptance matrix](ACCEPTANCE_INSTALLER.md) remains a specification. [Current evidence / Dovezi curente](STATUS.md) · [Python requirements / Cerințe Python](COMPATIBILITY.md).
+
 [Română — complete step-by-step manual](UNIVERSAL_INSTALLER.ro.md) · [Hardware and storage hosts](HOSTING_AND_STORAGE.md) · [Mandatory security model](SECURITY_INSTALLER.md) · [Wizard contract](WIZARD_CONTRACT.md) · [Acceptance matrix](ACCEPTANCE_INSTALLER.md)
 
-> **As of 8 October 2026, this is a product specification, not a shipped universal installer.** The public [RC14 V8 SANITIZED macOS Intel prerelease](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14) lacks a tested general NAS setup wizard. A public deployable Reader package is not yet available. Do not misrepresent those capabilities as implemented.
+> **As of 10 October 2026, this is a product specification, not a shipped universal installer.** The public [RC15.1 NOTARIZED PREVIEW macOS Intel prerelease](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc15.1) lacks a tested general NAS setup wizard. A public deployable Reader package is not yet available. Do not misrepresent those capabilities as implemented.
 
 ## The user problem
 
@@ -54,8 +56,8 @@ Tailscale/tsnet is a **private upload fallback to the same SMB NAS**, not the me
 | Generic SMB NAS with containers | SMB | Reader container on NAS, scoped to managed folder | Design only; per-vendor native validation needed |
 | NAS without container runtime | SMB | Reader on trusted always-on host with read-only NAS mount, or cloud mirror | Design only |
 | Linux PC / mini-server | SMB or future local backend | Root-confined Reader container, private tunnel | Design only |
-| Mac internal / USB/external disk | Future filesystem adapter | Local Reader exposed through permitted secure tunnel or cloud mirror | Backend **not implemented in RC14** |
-| Google Drive / Nextcloud / S3 | Future direct cloud adapters | Suitable cloud connector/Reader access with OAuth/IAM; no assumption of general ChatGPT availability | Not implemented in RC14 |
+| Mac internal / USB/external disk | Future filesystem adapter | Local Reader exposed through permitted secure tunnel or cloud mirror | Backend **not implemented in RC15.1** |
+| Google Drive / Nextcloud / S3 | Future direct cloud adapters | Suitable cloud connector/Reader access with OAuth/IAM; no assumption of general ChatGPT availability | Not implemented in RC15.1 |
 
 **An always-on NAS is not required to store a batch, but an offline local/USB disk does not automatically provide a continuously accessible Reader.** Retention must tolerate offline devices and only resume after checking stable volume identity.
 

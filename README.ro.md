@@ -7,13 +7,13 @@
 
 
 
-**[Descarcă primul pre-release public RC14 V8 →](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14)** — macOS Intel, curățat de date private, licență proprietară necomercială.
+**[Descarcă RC15.1 — Update & Keychain Fix, preview notarizat →](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc15.1)** — macOS Intel, curățat de date private, licență proprietară necomercială.
 
 ### Proiectul următor — Universal Installer (ÎN PROIECTARE)
 
 **[Ghid complet de instalare în română →](docs/UNIVERSAL_INSTALLER.ro.md)** · **[Versiunea engleză](docs/UNIVERSAL_INSTALLER.md)** · **[TrueNAS, alte NAS-uri, discuri și cloud](docs/HOSTING_AND_STORAGE.md)** · **[Securitate detaliată](docs/SECURITY_INSTALLER.md)** · **[Contractul wizardului](docs/WIZARD_CONTRACT.md)** · **[32 de teste de acceptare](docs/ACCEPTANCE_INSTALLER.md)**.
 
-Fluxul începe cu aplicația oficială ChatGPT pe calculator și continuă cu ChatGPT Drop, alegerea stocării, Reader read-only, autorizarea conectorului, teste cap-coadă și retenție sigură. **Documentele definesc produsul de construit, nu pretind că installerul generalist este deja implementat în RC14.**
+Fluxul începe cu aplicația oficială ChatGPT pe calculator și continuă cu ChatGPT Drop, alegerea stocării, Reader read-only, autorizarea conectorului, teste cap-coadă și retenție sigură. **Documentele definesc produsul de construit, nu pretind că installerul generalist este deja implementat în RC15.1.**
 
 **ChatGPT-TrueNAS** este proiectul public de documentație și distribuție. **ChatGPT Drop** este denumirea actuală a aplicației pentru Apple/macOS. Proiect independent, neafiliat oficial OpenAI, Apple, GitHub, Tailscale sau iXsystems.
 
@@ -66,24 +66,30 @@ Cele trei niveluri configurate independent sunt **transferul, citirea și reten�
 
 [Configurare TrueNAS](docs/SETUP.md) · [NAS obișnuit / disc propriu](docs/SETUP.md) · [Protocol de predare către orice Chat sau Work](docs/HANDOVER.md)
 
-## Stadiul real · 8 octombrie 2026
+## Stadiul real · 10 octombrie 2026
+
+**RC15.1 corectează pornirea după Update:** interfața folosește acum contul SMB din configurație, la fel ca installerul și motorul Python. Verificarea urmărește separat aplicația, helperul și motorul, cu dovezi proaspete pentru fiecare lansare. Nu creează automat parola unui cont alternativ `user`.
 
 | Domeniu | Stare confirmată |
 | --- | --- |
-| **Primul pre-release public** | **[ChatGPT Drop 0.9.0-rc14 V8 — Sanitized](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc14)**, macOS Intel x86_64, publicat la 8 octombrie 2026 |
-| **Verificări** | RC14 V8 build/audit DMG și semnături PASS. **Instalarea și E2E RC14, notarizarea Apple și funcționarea cu orice NAS nu sunt confirmate** |
-| **TrueNAS Reader** | Funcțional după corectarea montării în `ChatGPT-Live`; inspecția ZIP-urilor mari direct pe NAS confirmată |
-| **Retenție 7 zile** | **Activă pe TrueNAS de referință:** Cron ID 6; 31 de directoare expirate șterse inițial; Cloud Sync Drive SUCCESS (8 oct.) |
-| **Distribuție installer** | **Publicat:** DMG-ul RC14 V8 curățat de date private și resemnat (23.093.113 octeți; SHA-256 `acfa658ee6e9408d18ceb20e6f2ef51a5e807660d5b9ec977b9623a3db39a8c6`). Originalul intern rămâne privat. **Folosire necomercială gratuită**; reutilizarea codului/folosirea comercială cer acord scris |
-| **NAS generic, disc local/extern, Windows, Ubuntu, Apple Silicon** | Direcții de dezvoltare sau implementări nevalidate, nu produse finale |
+| **Cel mai nou pre-release** | **[ChatGPT Drop 0.9.0-rc15.1 — Update & Keychain Fix](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases/tag/v0.9.0-rc15.1)**, build 16, Intel x86_64 |
+| **Semnare și notarizare** | Developer ID; Apple **Accepted** pentru aplicație, installer și DMG; ticket-uri atașate și validate; Gatekeeper acceptă toate trei |
+| **Teste de reparație** | **20 cazuri izolate PASS:** 10 de pornire, 8 de instalare/rollback, 2 pentru dovezi vechi; Keychain simulat, fără parola SMB reală |
+| **Python** | Fără dependență de Homebrew; CPython standard **3.14 extern** necesar. MacPorts **3.14.8 testat nativ**; detectarea Python oficial/Homebrew păstrată, fără teste native noi pe acestea |
+| **Ce rămâne de verificat** | Update administrativ pe o instalare reală, reboot, transfer complet cu RC15.1; Python oficial/Homebrew, macOS 15 și alte calculatoare |
+| **Instalația existentă** | Nu a fost actualizată în timpul reparației; configurația, jurnalele, backupurile și Keychain păstrate |
+| **TrueNAS Reader și retenție** | Dovezi istorice din 8 octombrie: Reader funcțional, 31 de directoare expirate eliminate, sincronizare Drive SUCCESS; nu au fost retestate sau modificate pentru acest release |
+| **Alte platforme și destinații** | Apple Silicon, Windows/Linux și NAS generic nevalidate; backend local/extern și wizard universal neimplementate |
 
-[Stadiu detaliat](docs/STATUS.md) · [Identitatea buildului](docs/RELEASE.md) · [Roadmap](docs/ROADMAP.md)
+DMG: **23,051,823 octeți** · SHA-256: `ddd457567e63320621f61475559e2434d0434918c250d0c50a410dfb3e948074`.
+
+[Ce s-a schimbat și de ce](releases/v0.9.0-rc15.1.md) · [Instalare](docs/INSTALLATION.md) · [Compatibilitate Python](docs/COMPATIBILITY.md) · [Stadiu detaliat](docs/STATUS.md) · [Identitatea release-ului](docs/RELEASE.md) · [Roadmap](docs/ROADMAP.md)
 
 ## Gratuit de utilizat ≠ open-source
 
 **Oricine poate utiliza gratuit binarul oficial în scop personal, educațional ori alt scop necomercial. Utilizarea comercială/profesională necesită acord scris în prealabil.** Aceeași regulă se aplică redistribuirii, revânzării, găzduirii plătite, integrării OEM, derivatelor și reutilizării codului proprietar în alte produse. Repository-ul de dezvoltare rămâne privat; fișierele Python lizibile în DMG nu primesc licență de reutilizare. Licențele terțe și drepturile legale obligatorii sunt respectate.
 
-Publicarea pe GitHub **nu transformă proiectul în open-source**. Materialele publice pot fi vizualizate și *forked* în condițiile GitHub. Titularul permite numai distribuirea **variantei RC14 V8 curățate de date private și resemnate**, chiar dacă unele fișiere Python rămân lizibile, **fără a autoriza reutilizarea codului în alte produse**. Nu publicăm chei, credențiale, jurnale private ori repository-ul intern.
+Publicarea pe GitHub **nu transformă proiectul în open-source**. Materialele publice pot fi vizualizate și *forked* în condițiile GitHub. Titularul permite distribuirea **preview-ului RC15.1 curățat, semnat și notarizat**, precum și a variantei istorice RC14 V8 SANITIZED, chiar dacă unele fișiere Python rămân lizibile, **fără a autoriza reutilizarea codului în alte produse**. Nu publicăm chei, credențiale, jurnale private ori repository-ul intern.
 
 [Licență și permisiuni](LICENSE.md) · [Niveluri de securitate/acceptare](docs/RIGHTS.md) · [Politică securitate](SECURITY.md) · [Componente terțe](THIRD_PARTY_NOTICES.md)
 

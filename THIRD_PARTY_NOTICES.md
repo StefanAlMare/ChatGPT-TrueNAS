@@ -1,10 +1,12 @@
 # Third-party notices / Componente terțe
 
-The proprietary application license does not replace third-party licenses. The owner authorizes RC14 V8 as a **proprietary non-commercial prerelease**; verify whether a real binary is available under [Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases). The exact candidate's embedded Tailscale notice is reproduced below and must accompany distribution. Upstream: [Tailscale v1.102.3 license](https://github.com/tailscale/tailscale/blob/v1.102.3/LICENSE).
+The proprietary application license does not replace third-party licenses. The owner authorizes the sanitized RC15.1 preview and historical RC14 V8 as a **proprietary non-commercial prerelease**; verify whether a real binary is available under [Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases). The exact candidate's embedded Tailscale notice is reproduced below and must accompany distribution. Upstream: [Tailscale v1.102.3 license](https://github.com/tailscale/tailscale/blob/v1.102.3/LICENSE).
 
-Licența proprietară a aplicației nu înlocuiește licențele componentelor terțe. Titularul autorizează RC14 V8 ca **pre-release proprietar necomercial**; existența unui fișier se verifică în [Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases). Mai jos este notificarea Tailscale inclusă în candidat, care trebuie păstrată la distribuție.
+Licența proprietară a aplicației nu înlocuiește licențele componentelor terțe. Titularul autorizează preview-ul RC15.1 curățat și versiunea istorică RC14 V8 ca **pre-release proprietar necomercial**; existența unui fișier se verifică în [Releases](https://github.com/StefanAlMare/ChatGPT-TrueNAS/releases). Mai jos este notificarea Tailscale inclusă în candidat, care trebuie păstrată la distribuție.
 
 ## Runtime wheel inventory inspected on 8 October 2026
+
+RC15.1 retains the same dependency wheels and embedded tsnet helper byte-for-byte; the startup repair introduces no new third-party runtime dependency. / RC15.1 păstrează aceleași wheel-uri și helper tsnet, fără dependențe terțe noi.
 
 | Package | Version | License recorded in wheel metadata |
 | --- | --- | --- |

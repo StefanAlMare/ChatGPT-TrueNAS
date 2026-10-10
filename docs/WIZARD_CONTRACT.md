@@ -1,5 +1,7 @@
 # Contractul de implementare — Universal Installer v0.1
 
+**Version context / Context:** RC15.1 repairs startup and credential identity in the existing product. It does not implement this future wizard or change SMB/Tailscale transfer behavior. [Verified scope](STATUS.md) · [Compatibility](COMPATIBILITY.md).
+
 [Pașii utilizatorului](UNIVERSAL_INSTALLER.ro.md) · [Securitate](SECURITY_INSTALLER.md) · [Stocare](HOSTING_AND_STORAGE.md) · [Teste](ACCEPTANCE_INSTALLER.md)
 
 **Document de proiectare, nu executabil.** Codul real rămâne proprietar și privat; nu modificăm RC13/RC14, Private-Work sau repository-ul de profil în această etapă.
